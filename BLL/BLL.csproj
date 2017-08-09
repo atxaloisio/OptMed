@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FAE47EF5-5602-4CB7-973E-D4596F20281A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BLL</RootNamespace>
+    <AssemblyName>BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseBLL.cs" />
+    <Compile Include="CaixaBLL.cs" />
+    <Compile Include="CategoriaBLL.cs" />
+    <Compile Include="CidadeBLL.cs" />
+    <Compile Include="ClienteBLL.cs" />
+    <Compile Include="Cliente_ParcelaBLL.cs" />
+    <Compile Include="Cliente_TagBLL.cs" />
+    <Compile Include="Cliente_TransportadoraBLL.cs" />
+    <Compile Include="Cliente_VendedorBLL.cs" />
+    <Compile Include="CNAEBLL.cs" />
+    <Compile Include="Conta_CorrenteBLL.cs" />
+    <Compile Include="EmpresaBLL.cs" />
+    <Compile Include="Familia_ProdutoBLL.cs" />
+    <Compile Include="FormasPagVendaBLL.cs" />
+    <Compile Include="FuncaoBLL.cs" />
+    <Compile Include="Funcao_PerfilBLL.cs" />
+    <Compile Include="ItemPedido_OticaBLL.cs" />
+    <Compile Include="Motivo_EntregaBLL.cs" />
+    <Compile Include="MovimentoBLL.cs" />
+    <Compile Include="PaisBLL.cs" />
+    <Compile Include="ParcelaBLL.cs" />
+    <Compile Include="PedidoBLL.cs" />
+    <Compile Include="Pedido_ArmacaoBLL.cs" />
+    <Compile Include="Pedido_LenteBLL.cs" />
+    <Compile Include="Pedido_OticaBLL.cs" />
+    <Compile Include="Pedido_Otica_InfoAdicBLL.cs" />
+    <Compile Include="Pedido_Otica_ParcelasBLL.cs" />
+    <Compile Include="PerfilBLL.cs" />
+    <Compile Include="ProdutoBLL.cs" />
+    <Compile Include="Produto_IbptBLL.cs" />
+    <Compile Include="Produto_ImpostoBLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RotaBLL.cs" />
+    <Compile Include="TagBLL.cs" />
+    <Compile Include="Tipo_ArmacaoBLL.cs" />
+    <Compile Include="Tipo_LenteBLL.cs" />
+    <Compile Include="UnidadeBLL.cs" />
+    <Compile Include="UsuarioBLL.cs" />
+    <Compile Include="VendedorBLL.cs" />
+    <Compile Include="Vendedor_LocalidadeBLL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{f8da521d-7984-444d-8cf8-3f39b1d383cc}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{f2670f84-bee6-491c-8818-7a898b204bc5}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utils\Utils.csproj">
+      <Project>{2b871858-9472-400e-b75c-eccbe44ceae1}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

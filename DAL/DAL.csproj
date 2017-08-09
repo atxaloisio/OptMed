@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F8DA521D-7984-444D-8CF8-3F39B1D383CC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\prjbase\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\prjbase\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\prjbase\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\prjbase\packages\MySql.Data.Entity.6.9.9\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dbInteg.Context.cs">
+      <DependentUpon>dbInteg.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="dbInteg.Designer.cs">
+      <DependentUpon>dbInteg.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Interface\ICaixaRepositorio.cs" />
+    <Compile Include="Interface\ICategoriaRepositorio.cs" />
+    <Compile Include="Interface\ICliente_TransportadoraRepositorio.cs" />
+    <Compile Include="Interface\ICliente_Vendedor.cs" />
+    <Compile Include="Interface\ICNAERepositorio.cs" />
+    <Compile Include="Interface\IConta_CorrenteRepositorio.cs" />
+    <Compile Include="Interface\IEmpresaRepositorio.cs" />
+    <Compile Include="Interface\IFamilia_ProdutoRepositorio.cs" />
+    <Compile Include="Interface\IFormasPagVendaRepositorio.cs" />
+    <Compile Include="Interface\IFuncaoRepositorio.cs" />
+    <Compile Include="Interface\IFuncao_PerfilRepositorio.cs" />
+    <Compile Include="Interface\IMovimentoRepositorio.cs" />
+    <Compile Include="Interface\IPedido_Otica_InfoAdicRepositorio.cs" />
+    <Compile Include="Interface\IPedido_Otica_ParcelasRepositorio.cs" />
+    <Compile Include="Interface\IPerfilRepositorio.cs" />
+    <Compile Include="Interface\IProduto_ImpostoRepositorio.cs" />
+    <Compile Include="Interface\IRotaRepositoriocs.cs" />
+    <Compile Include="Interface\ITipo_ArmacaoRepositorio.cs" />
+    <Compile Include="Interface\ITipo_LenteRepositorio.cs" />
+    <Compile Include="Interface\IUnidadeRepositorio.cs" />
+    <Compile Include="Interface\IVendedorRepositorio.cs" />
+    <Compile Include="Interface\IVendedor_LocalidadeRepositorio.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorio\CaixaRepositorio.cs" />
+    <Compile Include="Repositorio\CategoriaRepositorio.cs" />
+    <Compile Include="Repositorio\CidadeRepositorio.cs" />
+    <Compile Include="Repositorio\ClienteRepositorio.cs" />
+    <Compile Include="Repositorio\Cliente_ParcelaRepositorio.cs" />
+    <Compile Include="Repositorio\Cliente_TagRepositorio.cs" />
+    <Compile Include="Interface\ICidadeRepositorio.cs" />
+    <Compile Include="Interface\IClienteRepositorio.cs" />
+    <Compile Include="Interface\ICliente_ParcelaRepositorio.cs" />
+    <Compile Include="Interface\ICliente_TagRepositorio.cs" />
+    <Compile Include="Interface\IItemPedidoRepositorio.cs" />
+    <Compile Include="Interface\IItemPedido_ImpostoRepositorio.cs" />
+    <Compile Include="Interface\IItemPedido_InfoAdicRepositorio.cs" />
+    <Compile Include="Interface\IItemPedido_OticaRepositorio.cs" />
+    <Compile Include="Interface\IItemPedido_ProdutoRepositorio.cs" />
+    <Compile Include="Interface\IMotivo_EntregaRepositorio.cs" />
+    <Compile Include="Interface\IPaisRepositorio.cs" />
+    <Compile Include="Interface\IParcelaRepositorio.cs" />
+    <Compile Include="Interface\IPedidoRepositorio.cs" />
+    <Compile Include="Interface\IPedido_ArmacaoRepositorio.cs" />
+    <Compile Include="Interface\IPedido_FreteRepositorio.cs" />
+    <Compile Include="Interface\IPedido_InfoAdicRepositorio.cs" />
+    <Compile Include="Interface\IPedido_LenteRepositorio.cs" />
+    <Compile Include="Interface\IPedido_ObservacoesRepositorio.cs" />
+    <Compile Include="Interface\IPedido_OticaRepositorio.cs" />
+    <Compile Include="Interface\IPedido_ParcelasRepositorio.cs" />
+    <Compile Include="Interface\IPedido_TotalRepositorio.cs" />
+    <Compile Include="Interface\IProdutoRepositorio.cs" />
+    <Compile Include="Interface\IProduto_IbptRepositorio.cs" />
+    <Compile Include="Interface\IRepositorio.cs" />
+    <Compile Include="Interface\ITagRepositorio.cs" />
+    <Compile Include="Repositorio\Cliente_TransportadoraRepositorio.cs" />
+    <Compile Include="Repositorio\Cliente_VendedorRepositorio.cs" />
+    <Compile Include="Repositorio\CNAERepositorio.cs" />
+    <Compile Include="Repositorio\EmpresaRepositorio.cs" />
+    <Compile Include="Repositorio\Familia_ProdutoRepositorio.cs" />
+    <Compile Include="Repositorio\FormasPagVendaRepositorio.cs" />
+    <Compile Include="Repositorio\Funcao_PerfilRepositorio.cs" />
+    <Compile Include="Repositorio\FuncaoRepositorio.cs" />
+    <Compile Include="Repositorio\Conta_CorrenteRepositorio.cs" />
+    <Compile Include="Repositorio\ItemPedidoRepositorio.cs" />
+    <Compile Include="Repositorio\ItemPedido_ImpostoRepositorio.cs" />
+    <Compile Include="Repositorio\ItemPedido_InfoAdicRepositorio.cs" />
+    <Compile Include="Repositorio\ItemPedido_OticaRepositorio.cs" />
+    <Compile Include="Repositorio\ItemPedido_ProdutoRepositorio.cs" />
+    <Compile Include="Interface\IUsuarioRepositorio.cs" />
+    <Compile Include="Repositorio\Motivo_EntregaRepositorio.cs" />
+    <Compile Include="Repositorio\MovimentoRepositorio.cs" />
+    <Compile Include="Repositorio\PaisRepositorio.cs" />
+    <Compile Include="Repositorio\ParcelaRepositorio.cs" />
+    <Compile Include="Repositorio\PedidoRepositorio.cs" />
+    <Compile Include="Repositorio\Pedido_ArmacaoRepositorio.cs" />
+    <Compile Include="Repositorio\Pedido_FreteRepositorio.cs" />
+    <Compile Include="Repositorio\Pedido_InfoAdicRepositorio.cs" />
+    <Compile Include="Repositorio\Pedido_LenteRepositorio.cs" />
+    <Compile Include="Repositorio\Pedido_ObservacoesRepositorio.cs" />
+    <Compile Include="Repositorio\Pedido_OticaRepositorio.cs" />
+    <Compile Include="Repositorio\Pedido_Otica_InfoAdicRepositorio.cs" />
+    <Compile Include="Repositorio\Pedido_Otica_ParcelasRepositorio.cs" />
+    <Compile Include="Repositorio\Pedido_ParcelasRepositorio.cs" />
+    <Compile Include="Repositorio\Pedido_TotalRepositorio.cs" />
+    <Compile Include="Repositorio\PerfilRepositorio.cs" />
+    <Compile Include="Repositorio\ProdutoRepositorio.cs" />
+    <Compile Include="Repositorio\Produto_IbptRepositorio.cs" />
+    <Compile Include="Repositorio\Produto_ImpostoRepositorio.cs" />
+    <Compile Include="Repositorio\Repositorio.cs" />
+    <Compile Include="Repositorio\RotaRepositorio.cs" />
+    <Compile Include="Repositorio\TagRepositorio.cs" />
+    <Compile Include="Repositorio\Tipo_ArmacaoRepositorio.cs" />
+    <Compile Include="Repositorio\Tipo_LenteRepositorio.cs" />
+    <Compile Include="Repositorio\UnidadeRepositorio.cs" />
+    <Compile Include="Repositorio\UsuarioRepositorio.cs" />
+    <Compile Include="Repositorio\VendedorRepositorio.cs" />
+    <Compile Include="Repositorio\Vendedor_LocalidadeRepositorio.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="dbInteg.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>dbInteg.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="dbInteg.edmx.diagram">
+      <DependentUpon>dbInteg.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dbInteg.Context.tt">
+      <DependentUpon>dbInteg.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>dbInteg.Context.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{f2670f84-bee6-491c-8818-7a898b204bc5}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

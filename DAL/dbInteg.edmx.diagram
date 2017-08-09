@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cd551435402e46628d70e3490437f739" Name="sistema" ZoomLevel="73">
+        <EntityTypeShape EntityType="dbintegracaoModel.ItemPedido" Width="1.5" PointX="1.75" PointY="9.25" />
+        <EntityTypeShape EntityType="dbintegracaoModel.ItemPedido_Imposto" Width="1.5" PointX="0.5" PointY="13.75" />
+        <EntityTypeShape EntityType="dbintegracaoModel.ItemPedido_InfoAdic" Width="2.125" PointX="3.75" PointY="13.375" />
+        <EntityTypeShape EntityType="dbintegracaoModel.ItemPedido_Produto" Width="1.75" PointX="3.5" PointY="17.875" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Pedido" Width="1.5" PointX="6" PointY="0.75" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Pedido_Frete" Width="1.5" PointX="6.25" PointY="10.875" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Pedido_Observacoes" Width="2" PointX="3.5" PointY="6.25" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Pedido_Parcelas" Width="1.5" PointX="10.25" PointY="7.5" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Pedido_Total" Width="1.5" PointX="8.625" PointY="2.125" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Produto" Width="1.5" PointX="8.5" PointY="16.5" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Produto_Ibpt" Width="1.5" PointX="10.875" PointY="16.5" />
+        <AssociationConnector Association="dbintegracaoModel.FK_itempedido_imposto_itempedido" ManuallyRouted="true" >
+          <ConnectorPoint PointX="1.75" PointY="11.201650390625" />
+          <ConnectorPoint PointX="1.1249995" PointY="11.201650390625" />
+          <ConnectorPoint PointX="1.1249995" PointY="13.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="dbintegracaoModel.FK_itempedido_infoadic_itempedido" />
+        <AssociationConnector Association="dbintegracaoModel.fk_itempedido_pedido" />
+        <AssociationConnector Association="dbintegracaoModel.FK_itempedido_produto_itempedido" />
+        <AssociationConnector Association="dbintegracaoModel.FK_itempedido_produto_produto" />
+        <AssociationConnector Association="dbintegracaoModel.FK_observacoes_pedido_pedido" />
+        <AssociationConnector Association="dbintegracaoModel.FK_pedido_frete_pedido" />
+        <AssociationConnector Association="dbintegracaoModel.FK_pedido_parcelas_pedido" />
+        <AssociationConnector Association="dbintegracaoModel.FK_pedido_total_pedido" />
+        <AssociationConnector Association="dbintegracaoModel.FK_produto_ibpt_produto" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Cliente" Width="2.25" PointX="11.875" PointY="0.75" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Cliente_Tag" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Tag" Width="1.5" PointX="14.75" PointY="4.625" />
+        <AssociationConnector Association="dbintegracaoModel.FK_cliente_tag_cliente" />
+        <AssociationConnector Association="dbintegracaoModel.FK_pedido_cliente" />
+        <AssociationConnector Association="dbintegracaoModel.FK_cliente_tag_tag" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Cliente_Parcela" Width="1.5" PointX="14.75" PointY="9.625" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Parcela" Width="1.5" PointX="10.875" PointY="11.25" />
+        <AssociationConnector Association="dbintegracaoModel.FK_cliente_parcela_cliente" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Cidade" Width="1.5" PointX="2.5" PointY="0.75" />
+        <EntityTypeShape EntityType="dbintegracaoModel.ItemPedido_Otica" Width="1.875" PointX="19.375" PointY="11.5" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Motivo_Entrega" Width="1.5" PointX="21.875" PointY="13.625" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Pais" Width="1.5" PointX="4.25" PointY="0.75" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Pedido_Armacao" Width="1.875" PointX="19.375" PointY="2.25" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Pedido_Lente" Width="1.5" PointX="19.375" PointY="6.875" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Pedido_Otica" Width="1.5" PointX="17.125" PointY="0.75" />
+        <AssociationConnector Association="dbintegracaoModel.FK_pedido_otica_cliente_cliente" />
+        <AssociationConnector Association="dbintegracaoModel.FK_itempedido_otica_pedido_otica" />
+        <AssociationConnector Association="dbintegracaoModel.FK_itempedido_otica_produto" />
+        <AssociationConnector Association="dbintegracaoModel.FK_pedido_otica_motivo_entrega" />
+        <AssociationConnector Association="dbintegracaoModel.FK_pedido_otica_pedido" />
+        <AssociationConnector Association="dbintegracaoModel.FK_pedido_armacao_pedido_otica" />
+        <AssociationConnector Association="dbintegracaoModel.FK_pedido_lentes_pedido_otica" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Conta_Corrente" Width="1.5" PointX="8.375" PointY="9.75" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Pedido_InfoAdic" Width="1.5" PointX="8.25" PointY="26.75" />
+        <AssociationConnector Association="dbintegracaoModel.FK_pedido_infoadic_pedido" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Categoria" Width="1.5" PointX="1.25" PointY="3.625" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Unidade" Width="1.5" PointX="18.375" PointY="16.75" />
+        <AssociationConnector Association="dbintegracaoModel.FK_pedido_infoadic_conta_corrente" />
+        <EntityTypeShape EntityType="dbintegracaoModel.FormasPagVenda" Width="1.5" PointX="14.5" PointY="13.5" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Rota" Width="1.5" PointX="22" PointY="0.5" />
+        <AssociationConnector Association="dbintegracaoModel.fk_rota_cidade" />
+        <AssociationConnector Association="dbintegracaoModel.fk_rota_cliente" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Cliente_Transportadora" Width="1.5" PointX="14.875" PointY="26.75" />
+        <AssociationConnector Association="dbintegracaoModel.fk_cliente_transportadora_cliente" />
+        <AssociationConnector Association="dbintegracaoModel.fk_cliente_transportadora_transportadora" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Produto_Imposto" Width="1.875" PointX="18.375" PointY="19.75" />
+        <AssociationConnector Association="dbintegracaoModel.FK_cliente_parcela_parcela" />
+        <AssociationConnector Association="dbintegracaoModel.FK_pedido_otica_parcela" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Vendedor" Width="1.5" PointX="2.5" PointY="33.375" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Vendedor_Localidade" Width="1.875" PointX="3.5" PointY="3.875" />
+        <AssociationConnector Association="dbintegracaoModel.FK_vendedor_localidade_cidade" />
+        <AssociationConnector Association="dbintegracaoModel.FK_pedido_otica_vendedor" />
+        <AssociationConnector Association="dbintegracaoModel.FK_vendedor_localidade_vendedor" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Cliente_Vendedor" Width="1.5" PointX="20.875" PointY="16.625" />
+        <AssociationConnector Association="dbintegracaoModel.FK_cliente_vendedor_cliente" />
+        <AssociationConnector Association="dbintegracaoModel.FK_cliente_vendedor_vendedor" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Caixa" Width="1.5" PointX="21.375" PointY="7.75" />
+        <AssociationConnector Association="dbintegracaoModel.FK_pedido_otica_transportadora" />
+        <AssociationConnector Association="dbintegracaoModel.FK_pedido_otica_caixa" />
+        <EntityTypeShape EntityType="dbintegracaoModel.CNAE" Width="1.5" PointX="21.375" PointY="19.75" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Familia_Produto" Width="1.5" PointX="22.375" PointY="3.75" />
+        <AssociationConnector Association="dbintegracaoModel.fk_produto_familia" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Empresa" Width="1.5" PointX="11.375" PointY="23.25" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Pedido_Otica_InfoAdic" Width="1.875" PointX="24.125" PointY="1" />
+        <AssociationConnector Association="dbintegracaoModel.fk_pedido_otica_infoadic" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Pedido_Otica_Parcelas" Width="2" PointX="18.875" PointY="32.125" />
+        <AssociationConnector Association="dbintegracaoModel.FK_pedido_otica_parcelas_pedido" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Movimento" Width="1.5" PointX="10.75" PointY="31.75" />
+        <AssociationConnector Association="dbintegracaoModel.fk_movimento_produto" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Tipo_Armacao" Width="1.5" PointX="13.375" PointY="16.75" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Tipo_Lente" Width="1.5" PointX="15.375" PointY="16.75" />
+        </Diagram>
+      <Diagram DiagramId="4e59f3d5d0b5427fa5bc47a1ed72db6a" Name="controle_acesso" ZoomLevel="84" >
+        <EntityTypeShape EntityType="dbintegracaoModel.Perfil" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Usuario" Width="1.5" PointX="6.75" PointY="4.25" />
+        <AssociationConnector Association="dbintegracaoModel.FK_usuario_perfil" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Funcao" Width="1.5" PointX="6.5" PointY="1.5" />
+        <EntityTypeShape EntityType="dbintegracaoModel.Funcao_Perfil" Width="1.5" PointX="4.25" PointY="0.75" />
+        <AssociationConnector Association="dbintegracaoModel.FK_funcao_perfil_funcao" />
+        <AssociationConnector Association="dbintegracaoModel.FK_funcao_perfil_perfil" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
