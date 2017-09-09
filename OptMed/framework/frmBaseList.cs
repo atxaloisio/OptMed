@@ -12,7 +12,7 @@ namespace optmed
 {
     public partial class frmBaseList : optmed.frmBase
     {
-        protected frmBase frmInstancia;
+        protected frmBaseCadEdit frmInstancia;
 
         protected int deslocamento = 0;
         protected int pagina = 0;
@@ -23,7 +23,8 @@ namespace optmed
         public frmBaseList()
         {
             InitializeComponent();
-            carregaDados();
+                      
+            carregaDados();            
             //this.WindowState = FormWindowState.Maximized;
         }
 
@@ -45,28 +46,53 @@ namespace optmed
 
         protected virtual void btnIncluir_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             if (ValidaAcessoFuncao(Operacao.Salvar))
             {
+                this.Cursor = Cursors.Default;
                 String TituloTela;
                 if ((frmInstancia == null) || (frmInstancia.IsDisposed))
                 {
                     this.InstanciarFormulario();
+
+                    TituloTela = frmInstancia.Text;
+                    frmInstancia.Text = "Incluir : " + frmInstancia.Text;
+                    if (this.Tag != null)
+                    {
+                        frmInstancia.Tag = this.Tag;
+                    }
+
+                    frmInstancia.MinimizeBox = false;
+                    frmInstancia.MaximizeBox = false;
+                    frmInstancia.ControlBox = false;
+                    frmInstancia.FormBorderStyle = FormBorderStyle.FixedSingle;
+                    frmInstancia.MdiParent = this.MdiParent;
+                    frmInstancia.atualizagrid = new AtualizaGrid(atualizaGrid);
+                    frmInstancia.Show();
                 }
-                TituloTela = frmInstancia.Text;
-                frmInstancia.Text = "Incluir : " + frmInstancia.Text;
-                if (this.Tag != null)
+                else
                 {
-                    frmInstancia.Tag = this.Tag;
+                    string mensagem = "Já existe uma Jalena aberta de " + frmInstancia.Text;
+                    MessageBox.Show(mensagem, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                
                 //frmInstancia.Text = TituloTela;
-                frmInstancia.ExibeDialogo();
-                if (frmInstancia.atualizagrid)
-                {
-                    carregaConsulta();
-                    AtualizaContadores();
-                }
-                frmInstancia.Dispose();
+
+                
+                //frmInstancia.ExibeDialogo();
+                //if (frmInstancia.atualizagrid)
+                //{
+                //    carregaConsulta();
+                //    AtualizaContadores();
+                //}
+                //frmInstancia.Dispose();
             }            
+        }
+
+        public virtual void atualizaGrid()
+        {
+            carregaConsulta();
+            AtualizaContadores();
         }
 
         protected virtual void btnExcluir_Click(object sender, EventArgs e)
@@ -77,9 +103,11 @@ namespace optmed
                 {
                     if (dgvDados.CurrentRow != null)
                     {
+                        this.Cursor = Cursors.WaitCursor;
                         excluirRegistro(dgvDados.CurrentRow.Index);
                         carregaConsulta();
                         AtualizaContadores();
+                        this.Cursor = Cursors.Default;
                     }
                     
                 }
@@ -113,37 +141,54 @@ namespace optmed
             if ((frmInstancia == null) || (frmInstancia.IsDisposed))
             {
                 this.InstanciarFormulario();
-            }
-            TituloTela = frmInstancia.Text;
-            frmInstancia.Text = "Editar : " + frmInstancia.Text;
-            if (this.Tag != null)
-            {
-                frmInstancia.Tag = this.Tag;
-            }
-            //frmInstancia.Text = TituloTela;
 
-
-            if (dgvDados.CurrentRow != null)
-            {
-                if (dgvDados[0, dgvDados.CurrentRow.Index].Value != null)
+                TituloTela = frmInstancia.Text;
+                frmInstancia.Text = "Editar : " + frmInstancia.Text;
+                if (this.Tag != null)
                 {
-                    if (Convert.ToInt32(dgvDados[0, dgvDados.CurrentRow.Index].Value) > 0)
-                    {
-                        frmInstancia.ExibeDialogo(this, Convert.ToInt32(dgvDados[0, dgvDados.CurrentRow.Index].Value));
-                    }
+                    frmInstancia.Tag = this.Tag;
+                }
+                //frmInstancia.Text = TituloTela;
 
+
+                if (dgvDados.CurrentRow != null)
+                {
+                    if (dgvDados[0, dgvDados.CurrentRow.Index].Value != null)
+                    {
+                        if (Convert.ToInt32(dgvDados[0, dgvDados.CurrentRow.Index].Value) > 0)
+                        {
+                            frmInstancia.Cursor = Cursors.WaitCursor;
+                            frmInstancia.MinimizeBox = false;
+                            frmInstancia.MaximizeBox = false;
+                            frmInstancia.ControlBox = false;
+                            frmInstancia.FormBorderStyle = FormBorderStyle.FixedSingle;
+                            frmInstancia.MdiParent = this.MdiParent;
+                            frmInstancia.atualizagrid = new AtualizaGrid(atualizaGrid);
+                            frmInstancia.Id = Convert.ToInt32(dgvDados[0, dgvDados.CurrentRow.Index].Value);
+                            frmInstancia.Show();
+                            //frmInstancia.ExibeDialogo(this, Convert.ToInt32(dgvDados[0, dgvDados.CurrentRow.Index].Value));
+                        }
+
+                    }
                 }
             }
-
-
-            if (frmInstancia.atualizagrid)
+            else
             {
-                // MessageBox.Show("atualiza.");
-                dgvDados.DataSource = null;
-                carregaConsulta();
-                AtualizaContadores();
+                string mensagem = "Já existe uma Jalena aberta de " + frmInstancia.Text;
+                MessageBox.Show(mensagem, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            frmInstancia.Dispose();
+
+
+            //if (frmInstancia.atualizagrid)
+            //{
+            //    // MessageBox.Show("atualiza.");
+            //    this.Cursor = Cursors.WaitCursor;
+            //    dgvDados.DataSource = null;
+            //    carregaConsulta();
+            //    AtualizaContadores();
+            //    this.Cursor = Cursors.Default;
+            //}
+            //frmInstancia.Dispose();
         }
 
         protected virtual void AtualizaContadores()
@@ -415,8 +460,9 @@ namespace optmed
             try
             {
                 
-                Cursor = Cursors.WaitCursor;
+                this.Cursor = Cursors.WaitCursor;
                 Application.DoEvents();
+                setTamanhoPagina();                
                 carregaConsulta();
                 pagina++;
                 AtualizaContadores();
@@ -432,6 +478,11 @@ namespace optmed
                 MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        protected virtual void setTamanhoPagina()
+        {
+            
         }
 
         protected virtual void callNextPage()

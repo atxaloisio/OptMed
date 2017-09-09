@@ -16,6 +16,7 @@ namespace optmed
     {
         UsuarioBLL usuarioBLL;
         PerfilBLL perfilBLL;
+        FilialBLL filialBLL;
         public frmCadEditUsuario()
         {
             InitializeComponent();
@@ -24,13 +25,7 @@ namespace optmed
         protected override void LoadToControls()
         {
             this.Cursor = Cursors.WaitCursor;
-            perfilBLL = new PerfilBLL();
-            List<Perfil> lstPerfil = perfilBLL.getPerfil();
-            cbPerfil.DataSource = lstPerfil;
-            cbPerfil.ValueMember = "Id";
-            cbPerfil.DisplayMember = "descricao";
-            cbPerfil.SelectedIndex = -1;
-
+            
             if (Id != null)
             {
                 usuarioBLL = new UsuarioBLL();
@@ -48,9 +43,46 @@ namespace optmed
                     txtDtCriacao.Text = usuario.inclusao.ToString();
                     cbPerfil.SelectedValue = usuario.perfil.Id;
                     chkInativo.Checked = usuario.inativo == "S";
+
+                    if (usuario.Id_filial != null)
+                    {
+                        cbFilial.SelectedValue = usuario.Id_filial;
+                    }
+                    
                 }
             }
             this.Cursor = Cursors.Default;
+        }
+
+        protected override void SetupControls()
+        {
+            base.SetupControls();
+            setupcbPerfil();
+            setupcbFilial();
+        }
+
+        private void setupcbFilial()
+        {
+            filialBLL = new FilialBLL();
+            List<Filial> lstFilial = filialBLL.getFilial();
+            cbFilial.DataSource = lstFilial;
+            cbFilial.ValueMember = "Id";
+            cbFilial.DisplayMember = "nome_fantasia";
+            cbFilial.SelectedIndex = -1;
+            if (lstFilial.Count <= 0)
+            {
+                cbFilial.Enabled = false;
+            }
+        }
+
+        private void setupcbPerfil()
+        {
+            perfilBLL = new PerfilBLL();
+            List<Perfil> lstPerfil = perfilBLL.getPerfil();
+            cbPerfil.DataSource = lstPerfil;
+            cbPerfil.ValueMember = "Id";
+            cbPerfil.DisplayMember = "descricao";
+            cbPerfil.SelectedIndex = -1;
         }
 
         protected override bool salvar(object sender, EventArgs e)
@@ -66,15 +98,34 @@ namespace optmed
                 usuario.password = Crypto.Codificar(txtPassword.Text);
                 usuario.Id_perfil = Convert.ToInt64(cbPerfil.SelectedValue);
                 usuario.inativo = chkInativo.Checked ? "S" : "N";
+                if (cbFilial.SelectedValue != null)
+                {
+                    filialBLL = new FilialBLL();
+                    Filial filial = filialBLL.Localizar(Convert.ToInt64(cbFilial.SelectedValue));
+                    usuario.Id_filial = filial.Id;
+                    usuario.Id_empresa = filial.Id_empresa;
+                }
+                else
+                {
+                    EmpresaBLL empresaBLL = new EmpresaBLL();
+                    Empresa empresa = empresaBLL.getEmpresa().FirstOrDefault();
+                    if (empresa != null)
+                    {
+                        usuario.Id_empresa = empresa.Id;
+                    }
+                }
 
                 if (Id != null)
                 {
                     usuario.Id = Convert.ToInt32(txtId.Text);
-                    usuario.inclusao = Convert.ToDateTime(txtDtCriacao.Text);
+                    usuario.alteracao = DateTime.Now;
+                    usuario.usuario_alteracao = Program.usuario_logado.nome;
                     usuarioBLL.AlterarUsuario(usuario);
                 }
                 else
                 {
+                    usuario.inclusao = DateTime.Now;
+                    usuario.usuario_inclusao = Program.usuario_logado.nome;
                     usuarioBLL.AdicionarUsuario(usuario);
                 }
 
@@ -134,6 +185,11 @@ namespace optmed
             {
                 epValidaDados.SetError((ComboBox)sender, string.Empty);
             }
-        }        
+        }
+
+        private void frmCadEditUsuario_Activated(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
     }
 }

@@ -34,8 +34,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.chkInativo = new System.Windows.Forms.CheckBox();
             this.pnlBotoes.SuspendLayout();
-            this.pnlPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epValidaDados)).BeginInit();
+            this.pnlPrincipal.SuspendLayout();
+            this.pnlJanela.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSalvar
@@ -44,6 +45,7 @@
             // 
             // btnFechar
             // 
+            this.btnFechar.Location = new System.Drawing.Point(3, 353);
             this.btnFechar.TabIndex = 1;
             // 
             // btnIncluir
@@ -56,12 +58,17 @@
             // 
             // pnlPrincipal
             // 
-            this.pnlPrincipal.Controls.Add(this.chkInativo);
-            this.pnlPrincipal.Controls.Add(this.txtNumero);
-            this.pnlPrincipal.Controls.Add(this.label2);
-            this.pnlPrincipal.Controls.Add(this.txtId);
-            this.pnlPrincipal.Controls.Add(this.label1);
             this.pnlPrincipal.Size = new System.Drawing.Size(457, 114);
+            // 
+            // pnlJanela
+            // 
+            this.pnlJanela.Controls.Add(this.chkInativo);
+            this.pnlJanela.Controls.Add(this.txtNumero);
+            this.pnlJanela.Controls.Add(this.label2);
+            this.pnlJanela.Controls.Add(this.txtId);
+            this.pnlJanela.Controls.Add(this.label1);
+            this.pnlJanela.Location = new System.Drawing.Point(66, 19);
+            this.pnlJanela.Size = new System.Drawing.Size(457, 114);
             // 
             // txtNumero
             // 
@@ -118,12 +125,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(572, 114);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "frmCadEditTipo_Armacao";
             this.Text = "Tipo de Armacao";
+            this.Activated += new System.EventHandler(this.frmCadEditTipo_Armacao_Activated);
             this.pnlBotoes.ResumeLayout(false);
-            this.pnlPrincipal.ResumeLayout(false);
-            this.pnlPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epValidaDados)).EndInit();
+            this.pnlPrincipal.ResumeLayout(false);
+            this.pnlJanela.ResumeLayout(false);
+            this.pnlJanela.PerformLayout();
             this.ResumeLayout(false);
 
         }

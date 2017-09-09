@@ -59,8 +59,9 @@
             this.tcProduto = new System.Windows.Forms.TabControl();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.pnlBotoes.SuspendLayout();
-            this.pnlPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epValidaDados)).BeginInit();
+            this.pnlPrincipal.SuspendLayout();
+            this.pnlJanela.SuspendLayout();
             this.tpInscrCnae.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tpEstoque.SuspendLayout();
@@ -69,29 +70,38 @@
             this.tcProduto.SuspendLayout();
             this.SuspendLayout();
             // 
+            // btnFechar
+            // 
+            this.btnFechar.Location = new System.Drawing.Point(3, 353);
+            // 
             // pnlBotoes
             // 
             this.pnlBotoes.Size = new System.Drawing.Size(115, 309);
             // 
             // pnlPrincipal
             // 
-            this.pnlPrincipal.Controls.Add(this.txtCodigo);
-            this.pnlPrincipal.Controls.Add(this.label6);
-            this.pnlPrincipal.Controls.Add(this.txtPrecoUnitario);
-            this.pnlPrincipal.Controls.Add(this.label5);
-            this.pnlPrincipal.Controls.Add(this.txtEAN);
-            this.pnlPrincipal.Controls.Add(this.label4);
-            this.pnlPrincipal.Controls.Add(this.cbUnidade);
-            this.pnlPrincipal.Controls.Add(this.label2);
-            this.pnlPrincipal.Controls.Add(this.txtNCM);
-            this.pnlPrincipal.Controls.Add(this.txtCodigoOmie);
-            this.pnlPrincipal.Controls.Add(this.txtId);
-            this.pnlPrincipal.Controls.Add(this.label1);
-            this.pnlPrincipal.Controls.Add(this.txtDescricao);
-            this.pnlPrincipal.Controls.Add(this.txtCodInt);
-            this.pnlPrincipal.Controls.Add(this.label3);
-            this.pnlPrincipal.Controls.Add(this.tcProduto);
             this.pnlPrincipal.Size = new System.Drawing.Size(813, 309);
+            // 
+            // pnlJanela
+            // 
+            this.pnlJanela.Controls.Add(this.txtCodigo);
+            this.pnlJanela.Controls.Add(this.label6);
+            this.pnlJanela.Controls.Add(this.txtPrecoUnitario);
+            this.pnlJanela.Controls.Add(this.label5);
+            this.pnlJanela.Controls.Add(this.txtEAN);
+            this.pnlJanela.Controls.Add(this.label4);
+            this.pnlJanela.Controls.Add(this.cbUnidade);
+            this.pnlJanela.Controls.Add(this.label2);
+            this.pnlJanela.Controls.Add(this.txtNCM);
+            this.pnlJanela.Controls.Add(this.txtCodigoOmie);
+            this.pnlJanela.Controls.Add(this.txtId);
+            this.pnlJanela.Controls.Add(this.label1);
+            this.pnlJanela.Controls.Add(this.txtDescricao);
+            this.pnlJanela.Controls.Add(this.txtCodInt);
+            this.pnlJanela.Controls.Add(this.label3);
+            this.pnlJanela.Controls.Add(this.tcProduto);
+            this.pnlJanela.Location = new System.Drawing.Point(66, 20);
+            this.pnlJanela.Size = new System.Drawing.Size(813, 309);
             // 
             // txtNCM
             // 
@@ -248,7 +258,7 @@
             this.tpInscrCnae.Location = new System.Drawing.Point(4, 25);
             this.tpInscrCnae.Name = "tpInscrCnae";
             this.tpInscrCnae.Padding = new System.Windows.Forms.Padding(3);
-            this.tpInscrCnae.Size = new System.Drawing.Size(485, 180);
+            this.tpInscrCnae.Size = new System.Drawing.Size(803, 180);
             this.tpInscrCnae.TabIndex = 2;
             this.tpInscrCnae.Text = "Informações Adicionais";
             this.tpInscrCnae.UseVisualStyleBackColor = true;
@@ -434,12 +444,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(928, 309);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "frmCadEditProduto";
             this.Text = "Produto";
+            this.Activated += new System.EventHandler(this.frmCadEditProduto_Activated);
             this.pnlBotoes.ResumeLayout(false);
-            this.pnlPrincipal.ResumeLayout(false);
-            this.pnlPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epValidaDados)).EndInit();
+            this.pnlPrincipal.ResumeLayout(false);
+            this.pnlJanela.ResumeLayout(false);
+            this.pnlJanela.PerformLayout();
             this.tpInscrCnae.ResumeLayout(false);
             this.tpInscrCnae.PerformLayout();
             this.groupBox1.ResumeLayout(false);

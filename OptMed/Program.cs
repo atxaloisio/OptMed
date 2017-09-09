@@ -25,7 +25,9 @@ namespace optmed
 
             frmSplash splash = new frmSplash();
             splash.Show();
-            
+            splash.Cursor = Cursors.AppStarting;
+
+
             Application.DoEvents();
            
             splash.setMensagem("Carregando configurações.");
@@ -214,7 +216,7 @@ namespace optmed
             4, 54, 87, 56, 123, 10, 3, 62,
             7, 9, 20, 36, 37, 21, 101, 57};
             t.TripleDESKey = MyOwnKey;
-
+            splash.Cursor = Cursors.Default;
             splash.Dispose();
 
             TrialMaker.RunTypes RT = t.ShowDialog();
@@ -239,7 +241,7 @@ namespace optmed
 
 
                 if (login.ShowDialog() == DialogResult.OK)
-                {
+                {                    
                     Application.Run(new frmPrincipal());
                 }
                 else

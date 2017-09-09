@@ -7544,7 +7544,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dbintegracaoDataSet</rd:DataSetName>
-        <rd:SchemaPath>D:\Desenv\atra\optmed\dbintegracaoDataSet.xsd</rd:SchemaPath>
+        <rd:SchemaPath>D:\Desenv\atra\prjbase\dbintegracaoDataSet.xsd</rd:SchemaPath>
         <rd:TableName>qryPedido_Otica</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -7572,7 +7572,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dbintegracaoDataSet</rd:DataSetName>
-        <rd:SchemaPath>D:\Desenv\atra\optmed\dbintegracaoDataSet.xsd</rd:SchemaPath>
+        <rd:SchemaPath>D:\Desenv\atra\prjbase\dbintegracaoDataSet.xsd</rd:SchemaPath>
         <rd:TableName>empresa_logo</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

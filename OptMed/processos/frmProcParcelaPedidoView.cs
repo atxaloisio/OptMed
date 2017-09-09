@@ -349,11 +349,12 @@ namespace optmed
         {
             try
             {
-                atualizagrid = true;
+                
                 if (ValidaAcessoFuncao(Operacao.Salvar))
                 {
                     if (salvar(sender, e))
-                    {                        
+                    {
+                        this.atualizagrid();                        
                         MessageBox.Show(Text + " salvo com sucesso.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);                        
                     }
                 }

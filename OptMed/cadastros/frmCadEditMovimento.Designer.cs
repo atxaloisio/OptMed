@@ -41,8 +41,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtObservacao = new System.Windows.Forms.RichTextBox();
             this.pnlBotoes.SuspendLayout();
-            this.pnlPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epValidaDados)).BeginInit();
+            this.pnlPrincipal.SuspendLayout();
+            this.pnlJanela.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +54,7 @@
             // btnFechar
             // 
             this.btnFechar.Image = global::optmed.Properties.Resources.cancelar;
+            this.btnFechar.Location = new System.Drawing.Point(3, 353);
             this.btnFechar.TabIndex = 1;
             this.btnFechar.Text = "&Cancelar";
             // 
@@ -66,18 +68,24 @@
             // 
             // pnlPrincipal
             // 
-            this.pnlPrincipal.Controls.Add(this.groupBox1);
-            this.pnlPrincipal.Controls.Add(this.label5);
-            this.pnlPrincipal.Controls.Add(this.txtValorUnitario);
-            this.pnlPrincipal.Controls.Add(this.label4);
-            this.pnlPrincipal.Controls.Add(this.txtQuantidade);
-            this.pnlPrincipal.Controls.Add(this.cbTipoMov);
-            this.pnlPrincipal.Controls.Add(this.label3);
-            this.pnlPrincipal.Controls.Add(this.label2);
-            this.pnlPrincipal.Controls.Add(this.txtData);
-            this.pnlPrincipal.Controls.Add(this.label1);
-            this.pnlPrincipal.Controls.Add(this.txtDescricao);
             this.pnlPrincipal.Size = new System.Drawing.Size(550, 183);
+            // 
+            // pnlJanela
+            // 
+            this.pnlJanela.Controls.Add(this.groupBox1);
+            this.pnlJanela.Controls.Add(this.label5);
+            this.pnlJanela.Controls.Add(this.txtValorUnitario);
+            this.pnlJanela.Controls.Add(this.label4);
+            this.pnlJanela.Controls.Add(this.txtQuantidade);
+            this.pnlJanela.Controls.Add(this.cbTipoMov);
+            this.pnlJanela.Controls.Add(this.label3);
+            this.pnlJanela.Controls.Add(this.label2);
+            this.pnlJanela.Controls.Add(this.txtData);
+            this.pnlJanela.Controls.Add(this.label1);
+            this.pnlJanela.Controls.Add(this.txtDescricao);
+            this.pnlJanela.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlJanela.Location = new System.Drawing.Point(0, 0);
+            this.pnlJanela.Size = new System.Drawing.Size(548, 181);
             // 
             // label1
             // 
@@ -203,12 +211,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(665, 183);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "frmCadEditMovimento";
             this.Text = "Movimento";
             this.pnlBotoes.ResumeLayout(false);
-            this.pnlPrincipal.ResumeLayout(false);
-            this.pnlPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epValidaDados)).EndInit();
+            this.pnlPrincipal.ResumeLayout(false);
+            this.pnlJanela.ResumeLayout(false);
+            this.pnlJanela.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 

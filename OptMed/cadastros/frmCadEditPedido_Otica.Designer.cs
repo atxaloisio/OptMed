@@ -66,6 +66,8 @@
             this.imgFotoCliente = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
+            this.txtDtInc = new System.Windows.Forms.TextBox();
+            this.txtUsuarioInc = new System.Windows.Forms.TextBox();
             this.txtIdPedLente = new System.Windows.Forms.TextBox();
             this.txtIdPedArmacao = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -155,9 +157,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnRemoveItem = new System.Windows.Forms.Button();
             this.btnAddItem = new System.Windows.Forms.Button();
+            this.txtIdFilial = new System.Windows.Forms.TextBox();
+            this.txtIdEmpresa = new System.Windows.Forms.TextBox();
             this.pnlBotoes.SuspendLayout();
-            this.pnlPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epValidaDados)).BeginInit();
+            this.pnlPrincipal.SuspendLayout();
+            this.pnlJanela.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgFotoCliente)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -185,16 +190,34 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // btnSalvar
+            // 
+            this.btnSalvar.BackColor = System.Drawing.Color.Green;
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.BackColor = System.Drawing.Color.Green;
+            this.btnFechar.Location = new System.Drawing.Point(3, 2197);
+            // 
+            // btnIncluir
+            // 
+            this.btnIncluir.BackColor = System.Drawing.Color.Green;
+            // 
             // pnlBotoes
             // 
-            this.pnlBotoes.Size = new System.Drawing.Size(115, 597);
+            this.pnlBotoes.Size = new System.Drawing.Size(115, 649);
             // 
             // pnlPrincipal
             // 
-            this.pnlPrincipal.Controls.Add(this.groupBox3);
-            this.pnlPrincipal.Controls.Add(this.groupBox2);
-            this.pnlPrincipal.Controls.Add(this.groupBox1);
-            this.pnlPrincipal.Size = new System.Drawing.Size(1007, 597);
+            this.pnlPrincipal.Size = new System.Drawing.Size(1037, 649);
+            // 
+            // pnlJanela
+            // 
+            this.pnlJanela.Controls.Add(this.groupBox3);
+            this.pnlJanela.Controls.Add(this.groupBox2);
+            this.pnlJanela.Controls.Add(this.groupBox1);
+            this.pnlJanela.Location = new System.Drawing.Point(24, 46);
+            this.pnlJanela.Size = new System.Drawing.Size(1007, 597);
             // 
             // groupBox1
             // 
@@ -354,8 +377,10 @@
             // 
             this.epValidaDados.SetFraseErro(this.txtNomeMedico, "Numero do pedido no Cliente obrigatório.");
             this.txtNomeMedico.Location = new System.Drawing.Point(400, 79);
+            this.txtNomeMedico.MaxLength = 100;
             this.txtNomeMedico.Name = "txtNomeMedico";
             this.epValidaDados.SetObrigatorio(this.txtNomeMedico, false);
+            this.txtNomeMedico.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.txtNomeMedico.Size = new System.Drawing.Size(302, 23);
             this.txtNomeMedico.TabIndex = 9;
             // 
@@ -455,7 +480,7 @@
             // 
             // btnPesquisa
             // 
-            this.btnPesquisa.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnPesquisa.BackColor = System.Drawing.Color.Green;
             this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisa.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnPesquisa.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisa.Image")));
@@ -606,6 +631,10 @@
             // 
             // groupBox20
             // 
+            this.groupBox20.Controls.Add(this.txtIdFilial);
+            this.groupBox20.Controls.Add(this.txtIdEmpresa);
+            this.groupBox20.Controls.Add(this.txtDtInc);
+            this.groupBox20.Controls.Add(this.txtUsuarioInc);
             this.groupBox20.Controls.Add(this.txtIdPedLente);
             this.groupBox20.Controls.Add(this.txtIdPedArmacao);
             this.groupBox20.Controls.Add(this.label16);
@@ -628,6 +657,28 @@
             this.groupBox20.TabIndex = 8;
             this.groupBox20.TabStop = false;
             this.groupBox20.Text = "Dados da armação";
+            // 
+            // txtDtInc
+            // 
+            this.epValidaDados.SetFraseErro(this.txtDtInc, "");
+            this.txtDtInc.Location = new System.Drawing.Point(844, 50);
+            this.txtDtInc.Name = "txtDtInc";
+            this.epValidaDados.SetObrigatorio(this.txtDtInc, false);
+            this.txtDtInc.Size = new System.Drawing.Size(71, 23);
+            this.txtDtInc.TabIndex = 52;
+            this.txtDtInc.TabStop = false;
+            this.txtDtInc.Visible = false;
+            // 
+            // txtUsuarioInc
+            // 
+            this.epValidaDados.SetFraseErro(this.txtUsuarioInc, "");
+            this.txtUsuarioInc.Location = new System.Drawing.Point(769, 50);
+            this.txtUsuarioInc.Name = "txtUsuarioInc";
+            this.epValidaDados.SetObrigatorio(this.txtUsuarioInc, false);
+            this.txtUsuarioInc.Size = new System.Drawing.Size(71, 23);
+            this.txtUsuarioInc.TabIndex = 51;
+            this.txtUsuarioInc.TabStop = false;
+            this.txtUsuarioInc.Visible = false;
             // 
             // txtIdPedLente
             // 
@@ -1628,7 +1679,7 @@
             // 
             // btnRemoveItem
             // 
-            this.btnRemoveItem.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnRemoveItem.BackColor = System.Drawing.Color.Green;
             this.btnRemoveItem.CausesValidation = false;
             this.btnRemoveItem.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnRemoveItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1644,7 +1695,7 @@
             // 
             // btnAddItem
             // 
-            this.btnAddItem.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnAddItem.BackColor = System.Drawing.Color.Green;
             this.btnAddItem.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAddItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -1657,18 +1708,42 @@
             this.btnAddItem.UseVisualStyleBackColor = false;
             this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
             // 
+            // txtIdFilial
+            // 
+            this.epValidaDados.SetFraseErro(this.txtIdFilial, "");
+            this.txtIdFilial.Location = new System.Drawing.Point(895, 20);
+            this.txtIdFilial.Name = "txtIdFilial";
+            this.epValidaDados.SetObrigatorio(this.txtIdFilial, false);
+            this.txtIdFilial.Size = new System.Drawing.Size(44, 23);
+            this.txtIdFilial.TabIndex = 54;
+            this.txtIdFilial.TabStop = false;
+            this.txtIdFilial.Visible = false;
+            // 
+            // txtIdEmpresa
+            // 
+            this.epValidaDados.SetFraseErro(this.txtIdEmpresa, "");
+            this.txtIdEmpresa.Location = new System.Drawing.Point(846, 20);
+            this.txtIdEmpresa.Name = "txtIdEmpresa";
+            this.epValidaDados.SetObrigatorio(this.txtIdEmpresa, false);
+            this.txtIdEmpresa.Size = new System.Drawing.Size(43, 23);
+            this.txtIdEmpresa.TabIndex = 53;
+            this.txtIdEmpresa.TabStop = false;
+            this.txtIdEmpresa.Visible = false;
+            // 
             // frmCadEditPedido_Otica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScroll = true;
             this.CancelButton = null;
-            this.ClientSize = new System.Drawing.Size(1122, 597);
+            this.ClientSize = new System.Drawing.Size(1152, 649);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmCadEditPedido_Otica";
             this.Text = "Pedido de Venda";
+            this.Activated += new System.EventHandler(this.frmCadEditPedido_Otica_Activated);
             this.pnlBotoes.ResumeLayout(false);
-            this.pnlPrincipal.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.epValidaDados)).EndInit();
+            this.pnlPrincipal.ResumeLayout(false);
+            this.pnlJanela.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgFotoCliente)).EndInit();
@@ -1841,5 +1916,9 @@
         private System.Windows.Forms.TextBox txtoe_eixo;
         private System.Windows.Forms.TextBox txtod_eixo;
         private System.Windows.Forms.Label lblPedidoCancelado;
+        private System.Windows.Forms.TextBox txtDtInc;
+        private System.Windows.Forms.TextBox txtUsuarioInc;
+        private System.Windows.Forms.TextBox txtIdFilial;
+        private System.Windows.Forms.TextBox txtIdEmpresa;
     }
 }

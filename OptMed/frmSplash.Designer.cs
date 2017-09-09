@@ -49,7 +49,7 @@
             // 
             this.pbSplash.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbSplash.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbSplash.Image = global::optmed.Properties.Resources.optima;
+            this.pbSplash.Image = global::optmed.Properties.Resources.OptMed;
             this.pbSplash.Location = new System.Drawing.Point(0, 0);
             this.pbSplash.Name = "pbSplash";
             this.pbSplash.Size = new System.Drawing.Size(500, 300);

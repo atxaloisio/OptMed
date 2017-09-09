@@ -121,6 +121,9 @@ namespace optmed
             }
         }
 
-        
+        private void frmCadEditTipo_Lente_Activated(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
     }
 }

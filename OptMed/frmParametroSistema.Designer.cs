@@ -32,6 +32,9 @@
             this.pnlPrincipal = new System.Windows.Forms.Panel();
             this.tcParametros = new System.Windows.Forms.TabControl();
             this.tpGeral = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtNrRegPag = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.rbOtica = new System.Windows.Forms.RadioButton();
             this.rbLaboratorio = new System.Windows.Forms.RadioButton();
@@ -135,6 +138,12 @@
             this.txtInscricaoMunicipal = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.txtInscricaoEstadual = new System.Windows.Forms.TextBox();
+            this.tbFiliais = new System.Windows.Forms.TabPage();
+            this.dgvFilial = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
@@ -157,6 +166,7 @@
             this.pnlPrincipal.SuspendLayout();
             this.tcParametros.SuspendLayout();
             this.tpGeral.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.gbTipoArqIntegracao.SuspendLayout();
@@ -172,6 +182,9 @@
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.tpInscrCnae.SuspendLayout();
+            this.tbFiliais.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFilial)).BeginInit();
+            this.panel1.SuspendLayout();
             this.pnlBotoes.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -203,6 +216,7 @@
             // 
             // tpGeral
             // 
+            this.tpGeral.Controls.Add(this.groupBox1);
             this.tpGeral.Controls.Add(this.groupBox3);
             this.tpGeral.Controls.Add(this.groupBox2);
             this.tpGeral.Controls.Add(this.txtCaminhoArquivos);
@@ -216,6 +230,34 @@
             this.tpGeral.TabIndex = 0;
             this.tpGeral.Text = "Geral";
             this.tpGeral.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtNrRegPag);
+            this.groupBox1.Controls.Add(this.label37);
+            this.groupBox1.Location = new System.Drawing.Point(6, 205);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(536, 51);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Listagem";
+            // 
+            // txtNrRegPag
+            // 
+            this.txtNrRegPag.Location = new System.Drawing.Point(220, 22);
+            this.txtNrRegPag.Name = "txtNrRegPag";
+            this.txtNrRegPag.Size = new System.Drawing.Size(113, 23);
+            this.txtNrRegPag.TabIndex = 0;
+            this.txtNrRegPag.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyNumber_KeyPress);
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(5, 26);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(213, 16);
+            this.label37.TabIndex = 19;
+            this.label37.Text = "Numero de registros por página";
             // 
             // groupBox3
             // 
@@ -273,6 +315,7 @@
             this.txtCodPedido.Name = "txtCodPedido";
             this.txtCodPedido.Size = new System.Drawing.Size(113, 23);
             this.txtCodPedido.TabIndex = 2;
+            this.txtCodPedido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyNumber_KeyPress);
             // 
             // txtCodProduto
             // 
@@ -280,6 +323,7 @@
             this.txtCodProduto.Name = "txtCodProduto";
             this.txtCodProduto.Size = new System.Drawing.Size(113, 23);
             this.txtCodProduto.TabIndex = 1;
+            this.txtCodProduto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyNumber_KeyPress);
             // 
             // txtCodCliente
             // 
@@ -287,6 +331,7 @@
             this.txtCodCliente.Name = "txtCodCliente";
             this.txtCodCliente.Size = new System.Drawing.Size(113, 23);
             this.txtCodCliente.TabIndex = 0;
+            this.txtCodCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyNumber_KeyPress);
             // 
             // label9
             // 
@@ -876,6 +921,7 @@
             this.tcCliente.Controls.Add(this.tpEndereco);
             this.tcCliente.Controls.Add(this.tpTelefoneEmail);
             this.tcCliente.Controls.Add(this.tpInscrCnae);
+            this.tcCliente.Controls.Add(this.tbFiliais);
             this.tcCliente.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tcCliente.Location = new System.Drawing.Point(3, 112);
             this.tcCliente.Name = "tcCliente";
@@ -1324,6 +1370,89 @@
             this.txtInscricaoEstadual.Size = new System.Drawing.Size(123, 23);
             this.txtInscricaoEstadual.TabIndex = 0;
             // 
+            // tbFiliais
+            // 
+            this.tbFiliais.Controls.Add(this.dgvFilial);
+            this.tbFiliais.Controls.Add(this.panel1);
+            this.tbFiliais.Location = new System.Drawing.Point(4, 25);
+            this.tbFiliais.Name = "tbFiliais";
+            this.tbFiliais.Padding = new System.Windows.Forms.Padding(3);
+            this.tbFiliais.Size = new System.Drawing.Size(775, 120);
+            this.tbFiliais.TabIndex = 3;
+            this.tbFiliais.Text = "Filiais";
+            this.tbFiliais.UseVisualStyleBackColor = true;
+            // 
+            // dgvFilial
+            // 
+            this.dgvFilial.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvFilial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFilial.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvFilial.Location = new System.Drawing.Point(39, 3);
+            this.dgvFilial.MultiSelect = false;
+            this.dgvFilial.Name = "dgvFilial";
+            this.dgvFilial.ReadOnly = true;
+            this.dgvFilial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvFilial.Size = new System.Drawing.Size(733, 114);
+            this.dgvFilial.TabIndex = 3;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnRemove);
+            this.panel1.Controls.Add(this.btnEdit);
+            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(36, 114);
+            this.panel1.TabIndex = 2;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnRemove.CausesValidation = false;
+            this.btnRemove.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemove.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnRemove.Image = global::optmed.Properties.Resources.remove;
+            this.btnRemove.Location = new System.Drawing.Point(0, 52);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(36, 26);
+            this.btnRemove.TabIndex = 1;
+            this.btnRemove.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnEdit.CausesValidation = false;
+            this.btnEdit.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnEdit.Image = global::optmed.Properties.Resources.Editar;
+            this.btnEdit.Location = new System.Drawing.Point(0, 26);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(36, 26);
+            this.btnEdit.TabIndex = 2;
+            this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAdd.Image = global::optmed.Properties.Resources.plus;
+            this.btnAdd.Location = new System.Drawing.Point(0, 0);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(36, 26);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // label31
             // 
             this.label31.AutoSize = true;
@@ -1399,7 +1528,7 @@
             this.txtCodigo.Location = new System.Drawing.Point(294, 6);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 23);
-            this.txtCodigo.TabIndex = 70;
+            this.txtCodigo.TabIndex = 0;
             this.txtCodigo.TabStop = false;
             // 
             // txtId
@@ -1467,7 +1596,7 @@
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCancelar.Image = global::optmed.Properties.Resources.fechar;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(3, 40);
+            this.btnCancelar.Location = new System.Drawing.Point(3, 258);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(109, 33);
             this.btnCancelar.TabIndex = 10;
@@ -1512,6 +1641,8 @@
             this.tcParametros.ResumeLayout(false);
             this.tpGeral.ResumeLayout(false);
             this.tpGeral.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -1540,6 +1671,9 @@
             this.groupBox6.PerformLayout();
             this.tpInscrCnae.ResumeLayout(false);
             this.tpInscrCnae.PerformLayout();
+            this.tbFiliais.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFilial)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.pnlBotoes.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -1672,5 +1806,14 @@
         private System.Windows.Forms.CheckBox chkEmpresa;
         private System.Windows.Forms.CheckBox chkAtualizaTransportadora;
         private System.Windows.Forms.CheckBox chkAtualizaFornecedor;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtNrRegPag;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TabPage tbFiliais;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnEdit;
+        protected System.Windows.Forms.DataGridView dgvFilial;
     }
 }

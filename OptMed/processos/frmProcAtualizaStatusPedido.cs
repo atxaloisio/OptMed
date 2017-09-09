@@ -38,14 +38,40 @@ namespace optmed
             carregaDados();
         }
 
+        public virtual void ConfigurarForm(Form pFormParent)
+        {
+            //WindowState = FormWindowState.Maximized;
+            MinimizeBox = false;
+            MaximizeBox = false;
+            ControlBox = true;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+
+            MdiParent = pFormParent;
+        }
+
         private void frmProcAtualizaStatusPedido_Activated(object sender, EventArgs e)
         {
-
+            WindowState = FormWindowState.Maximized;
         }
 
         protected virtual void frmProcAtualizaStatusPedido_Load(object sender, EventArgs e)
         {
+            if (!isDialogo)
+            {
+                pnlDados.Left = (this.Width / 2) - (pnlDados.Width / 2);
+                pnlDados.Top = (this.Height / 2) - (pnlDados.Height / 2);
 
+                if (pnlDados.Top <= 0)
+                {
+                    pnlDados.Top = 5;
+                }
+
+                if (pnlDados.Left <= 0)
+                {
+                    pnlDados.Left = 5;
+                    pnlDados.Top = 5;
+                }
+            }
         }
 
         protected virtual void formataGridFiltro()
@@ -1199,6 +1225,33 @@ namespace optmed
         private void lblEntregue_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             ListaPedido_Otica(StatusPedido.ENTREGUE, StatusPedido.ENTREGUE);
+        }
+
+        private void frmProcAtualizaStatusPedido_Resize(object sender, EventArgs e)
+        {
+            if (!isDialogo)
+            {
+                pnlDados.Left = (this.Width / 2) - (pnlDados.Width / 2);
+                pnlDados.Top = (this.Height / 2) - (pnlDados.Height / 2);
+
+                if (pnlDados.Top <= 0)
+                {
+                    pnlDados.Top = 5;
+                }
+
+                if (pnlDados.Left <= 0)
+                {
+                    pnlDados.Left = 5;
+                    pnlDados.Top = 5;
+                }
+            }
+
+            
+
+            if (this.WindowState != FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
         }
     }
 }

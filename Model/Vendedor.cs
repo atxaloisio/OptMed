@@ -28,6 +28,8 @@ namespace Model
         public string nome { get; set; }
         public string inativo { get; set; }
         public string sincronizar { get; set; }
+        public Nullable<long> Id_empresa { get; set; }
+        public Nullable<long> Id_filial { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pedido_Otica> pedido_otica { get; set; }

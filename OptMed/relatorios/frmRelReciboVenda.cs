@@ -10,6 +10,8 @@ using System.Text;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 using Utils;
+using Model;
+using BLL;
 
 namespace optmed
 {
@@ -30,6 +32,7 @@ namespace optmed
             dbintegracaoDataSetTableAdapters.qryReciboVendaTableAdapter Venda = new dbintegracaoDataSetTableAdapters.qryReciboVendaTableAdapter();
             dbintegracaoDataSetTableAdapters.empresa_logoTableAdapter Empresa_Logo = new dbintegracaoDataSetTableAdapters.empresa_logoTableAdapter();
             dbintegracaoDataSetTableAdapters.qryParcelaTableAdapter parcela = new dbintegracaoDataSetTableAdapters.qryParcelaTableAdapter();
+            dbintegracaoDataSetTableAdapters.filial_logoTableTableAdapter Filial_Logo = new dbintegracaoDataSetTableAdapters.filial_logoTableTableAdapter();
 
             DataTable dt = new DataTable();
             DataTable dtl = new DataTable();
@@ -37,7 +40,16 @@ namespace optmed
 
             //dt = prod.GetData(Convert.ToInt64(Id));
             dt = Venda.GetData(Convert.ToInt64(Id));
-            dtl = Empresa_Logo.GetData();
+
+            if (stUsuario.UsuarioLogado.Id_filial != null)
+            {
+                dtl = Filial_Logo.GetData(Convert.ToInt64(stUsuario.UsuarioLogado.Id_filial));
+            }
+            else
+            {
+                dtl = Empresa_Logo.GetData();
+            }
+                
             dtp = parcela.GetData(Convert.ToInt64(Id));
 
             ReportDataSource ds = new ReportDataSource(dt.TableName, dt);
@@ -53,11 +65,27 @@ namespace optmed
             rvRelatorios.LocalReport.DataSources.Add(ds3);
 
             //rvRelatorios.LocalReport.SubreportProcessing += new SubreportProcessingEventHandler(onSubreportProcessing);
+            string msgRodape = string.Empty;
+            if (stUsuario.UsuarioLogado.Id_filial != null)
+            {
+                FilialBLL FilialBLL = new FilialBLL();
+                Filial f = FilialBLL.Localizar(stUsuario.UsuarioLogado.Id_filial);
+                msgRodape = string.Format("{0} - {1} {2} {3}, {4} {5} {6} CEP: {7} Tel:({8}){9} e-mail:{10}                                {11}",f.nome_fantasia, f.endereco, f.endereco_numero, f.complemento, f.bairro, f.cidade, f.estado, f.cep, f.telefone1_ddd, f.telefone1_numero, f.email, "Documento sem valor fiscal");
+            }
+            else
+            {
+                if (stUsuario.UsuarioLogado.Id_empresa != null)
+                {
+                    EmpresaBLL EmpresaBLL = new EmpresaBLL();
+                    Empresa e = EmpresaBLL.Localizar(stUsuario.UsuarioLogado.Id_empresa);
+                    msgRodape = string.Format("{0} - {1} {2} {3}, {4} {5} {6} CEP: {7} Tel:({8}){9} e-mail:{10}                                {11}", e.nome_fantasia, e.endereco, e.endereco_numero, e.complemento, e.bairro, e.cidade, e.estado, e.cep, e.telefone1_ddd, e.telefone1_numero, e.email, "Documento sem valor fiscal");
+                }
+            }
 
             ReportParameterCollection parametros = new ReportParameterCollection();
             ReportParameter parametro = new ReportParameter();
             parametro.Name = "EndLaboratorio";
-            parametro.Values.Add("Documento sem valor fiscal");
+            parametro.Values.Add(msgRodape);
             parametro.Values.Add("");
             parametros.Add(parametro);
             

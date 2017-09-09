@@ -19,6 +19,9 @@ namespace optmed
     public partial class frmPrincipal : Form
     {
         private string nomeApp = string.Empty;
+        private bool vwLaboratorio = false;
+        private bool vwOtica = false;
+        private bool intERP = false;
         public frmPrincipal()
         {                       
             InitializeComponent();
@@ -73,10 +76,12 @@ namespace optmed
 
             if (instanciar)
             {
+                this.Cursor = Cursors.WaitCursor;
                 var frm = new frmListClientes();
                 frm.ConfigurarForm(this);
                 frm.Tag = ((ToolStripMenuItem)sender).Tag;
                 frm.Show();
+                this.Cursor = Cursors.Default;
             }
             
         }
@@ -198,7 +203,31 @@ namespace optmed
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            confPermissaoMenu();        
+            this.Cursor = Cursors.WaitCursor;
+            confParametros();
+            confPermissaoMenu();
+            this.Cursor = Cursors.Default;
+        }
+
+        private void confParametros()
+        {
+            string layoutLaboratorio = Parametro.GetParametro("layoutLaboratorio");
+            if (!string.IsNullOrEmpty(layoutLaboratorio))
+            {
+                vwLaboratorio = Convert.ToBoolean(layoutLaboratorio);
+            }
+
+            string layoutOtica = Parametro.GetParametro("layoutOtica");
+            if (!string.IsNullOrEmpty(layoutOtica))
+            {
+                vwOtica = Convert.ToBoolean(layoutOtica);
+            }
+
+            string intOmie = Parametro.GetParametro("intOmie");
+            if (!string.IsNullOrEmpty(intOmie))
+            {
+                intERP = Convert.ToBoolean(intOmie);
+            }
         }
 
         private void confPermissaoMenu()
@@ -224,6 +253,32 @@ namespace optmed
                             {
                                 exibemenu = fp.consultar == "S" || fp.editar == "S" || fp.excluir == "S" || fp.salvar == "S" || fp.imprimir == "S";
                                 child.Visible = exibemenu;
+                                //relacionar as tags que não serão exibidas na visão de Oticas
+                                if (exibemenu)
+                                {
+                                    switch (Convert.ToInt32(child.Tag))
+                                    {
+                                        case 1006:
+                                        case 1010:
+                                        case 1011:
+                                        case 10043:
+                                        case 10044:
+                                        case 3001:
+                                            {
+                                                child.Visible = vwLaboratorio;
+                                            }
+                                            break;
+                                        default:
+                                            break;
+                                    }
+
+                                    //Agrupamento de pedidos somente com interação para ERP
+                                    if (Convert.ToInt32(child.Tag) == 2001)
+                                    {
+                                        child.Visible = intERP;
+                                    }
+                                }
+                                
                             }
                         }
                     }
@@ -253,6 +308,31 @@ namespace optmed
                         {
                             exibemenu = fp.consultar == "S" || fp.editar == "S" || fp.excluir == "S" || fp.salvar == "S" || fp.imprimir == "S";
                             child.Visible = exibemenu;
+                            //relacionar as tags que não serão exibidas na visão de Oticas
+                            if (exibemenu)
+                            {
+                                switch (Convert.ToInt32(child.Tag))
+                                {
+                                    case 1006:
+                                    case 1010:
+                                    case 1011:
+                                    case 10043:
+                                    case 10044:
+                                    case 3001:
+                                        {
+                                            child.Visible = vwLaboratorio;
+                                        }
+                                        break;
+                                    default:
+                                        break;
+                                }
+
+                                //Agrupamento de pedidos somente com interação para ERP
+                                if (Convert.ToInt32(child.Tag) == 2001)
+                                {
+                                    child.Visible = intERP;
+                                }
+                            }
                         }
                     }
                 }                
@@ -355,9 +435,11 @@ namespace optmed
 
         private void parametrosDeSistemasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             frmParametroSistema ParametroSistema = new frmParametroSistema();
             ParametroSistema.Tag = ((ToolStripMenuItem)sender).Tag;
             ParametroSistema.ExibeDialogo();
+            this.Cursor = Cursors.Default;
             ParametroSistema.Dispose();            
         }
 
@@ -379,9 +461,9 @@ namespace optmed
 
         private void rotasDeEntregaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //frmRelRota relatorio = new frmRelRota();
-            frmRelReciboVenda relatorio = new frmRelReciboVenda();
-            //relatorio.rvRelatorios.LocalReport.ReportEmbeddedResource = "optmed.relatorios.relRota.rdlc";
+            frmRelRota relatorio = new frmRelRota();
+            //frmRelReciboVenda relatorio = new frmRelReciboVenda();
+            relatorio.rvRelatorios.LocalReport.ReportEmbeddedResource = "optmed.relatorios.relRota.rdlc";
             relatorio.ExibeDialogo(this);
             relatorio.Dispose();
         }
@@ -488,10 +570,27 @@ namespace optmed
 
         private void mnuStatusPedido_Click(object sender, EventArgs e)
         {
-            frmProcAtualizaStatusPedido AtualizaStatusPedido = new frmProcAtualizaStatusPedido();
-            AtualizaStatusPedido.Tag = ((ToolStripMenuItem)sender).Tag;
-            AtualizaStatusPedido.ExibeDialogo();
-            AtualizaStatusPedido.Dispose();
+            Boolean instanciar = true;
+
+            foreach (var mdiChildForm in MdiChildren)
+            {
+                if (mdiChildForm is frmProcAtualizaStatusPedido)
+                {
+                    instanciar = false;
+                    //mdiChildForm.Show();
+                    mdiChildForm.WindowState = FormWindowState.Maximized;
+                    mdiChildForm.BringToFront();
+                }
+            }
+
+            if (instanciar)
+            {                
+                frmProcAtualizaStatusPedido AtualizaStatusPedido = new frmProcAtualizaStatusPedido();
+                AtualizaStatusPedido.ConfigurarForm(this);
+                AtualizaStatusPedido.Tag = ((ToolStripMenuItem)sender).Tag;                
+                AtualizaStatusPedido.Show();
+                AtualizaStatusPedido.WindowState = FormWindowState.Maximized;
+            }
         }
 
         private void mnuAgrupamentoPedido_Click(object sender, EventArgs e)

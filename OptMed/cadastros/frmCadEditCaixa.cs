@@ -33,6 +33,7 @@ namespace optmed
                     txtId.Text = Caixa.Id.ToString();
                     txtNumero.Text = Caixa.numero;
                     chkInativo.Checked = Caixa.inativo == "S";
+                    txtNumero.Focus();
                 }
             }
 
@@ -63,7 +64,8 @@ namespace optmed
                     Id = Caixa.Id;
                     txtId.Text = Caixa.Id.ToString();
                 }
-                return true;
+                txtNumero.Focus();
+                return true;                
             }
             else
             {
@@ -121,6 +123,14 @@ namespace optmed
             }
         }
 
-        
+        private void frmCadEditCaixa_Activated(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void frmCadEditCaixa_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

@@ -35,16 +35,18 @@
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pnlBotoes.SuspendLayout();
-            this.pnlPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epValidaDados)).BeginInit();
+            this.pnlPrincipal.SuspendLayout();
+            this.pnlJanela.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSalvar
             // 
             this.btnSalvar.TabIndex = 0;
             // 
-            // btnCancelar
+            // btnFechar
             // 
+            this.btnFechar.Location = new System.Drawing.Point(3, 353);
             this.btnFechar.TabIndex = 1;
             // 
             // btnIncluir
@@ -57,13 +59,18 @@
             // 
             // pnlPrincipal
             // 
-            this.pnlPrincipal.Controls.Add(this.txtDescricao);
-            this.pnlPrincipal.Controls.Add(this.label3);
-            this.pnlPrincipal.Controls.Add(this.txtNome);
-            this.pnlPrincipal.Controls.Add(this.label2);
-            this.pnlPrincipal.Controls.Add(this.txtId);
-            this.pnlPrincipal.Controls.Add(this.label1);
             this.pnlPrincipal.Size = new System.Drawing.Size(438, 114);
+            // 
+            // pnlJanela
+            // 
+            this.pnlJanela.Controls.Add(this.txtDescricao);
+            this.pnlJanela.Controls.Add(this.label3);
+            this.pnlJanela.Controls.Add(this.txtNome);
+            this.pnlJanela.Controls.Add(this.label2);
+            this.pnlJanela.Controls.Add(this.txtId);
+            this.pnlJanela.Controls.Add(this.label1);
+            this.pnlJanela.Location = new System.Drawing.Point(65, 19);
+            this.pnlJanela.Size = new System.Drawing.Size(438, 114);
             // 
             // txtNome
             // 
@@ -128,13 +135,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(553, 114);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "frmCadEditPerfil";
             this.Text = "Perfil";
+            this.Activated += new System.EventHandler(this.frmCadEditPerfil_Activated);
             this.Shown += new System.EventHandler(this.frmCadEditPerfil_Shown);
             this.pnlBotoes.ResumeLayout(false);
-            this.pnlPrincipal.ResumeLayout(false);
-            this.pnlPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epValidaDados)).EndInit();
+            this.pnlPrincipal.ResumeLayout(false);
+            this.pnlJanela.ResumeLayout(false);
+            this.pnlJanela.PerformLayout();
             this.ResumeLayout(false);
 
         }

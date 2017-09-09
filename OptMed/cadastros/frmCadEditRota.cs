@@ -207,5 +207,10 @@ namespace optmed
                 MessageBox.Show("Valor digitado não encontrado na lista", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }         
         }
+
+        private void frmCadEditRota_Activated(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
     }
 }

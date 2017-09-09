@@ -54,6 +54,15 @@ namespace optmed
             frmInstancia = new frmCadEditPedido_Laboratorio();
         }
 
+        protected override void setTamanhoPagina()
+        {
+            string NrRegPagListagem = Parametro.GetParametro("NrRegPag");
+            if (!string.IsNullOrEmpty(NrRegPagListagem))
+            {
+                tamanhoPagina = Convert.ToInt32(NrRegPagListagem);
+            }
+        }
+
         protected override void formataColunagridFiltros(DataGridView gridFiltros)
         {
             base.formataColunagridFiltros(gridFiltros);
@@ -849,20 +858,14 @@ namespace optmed
                                         CancelarPedido.ExibeDialogo(this, Id);
                                     }
                                 }
-
-                                CancelarPedido.atualizagrid = true;
-
+                                
                             }
 
                         }
                     }
 
 
-                    if (CancelarPedido.atualizagrid)
-                    {
-                        carregaConsulta();
-                        AtualizaContadores();
-                    }
+                    this.atualizagrid();
                 }
             }
             catch (Exception ex)

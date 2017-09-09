@@ -13,7 +13,6 @@ namespace optmed.dbintegracaoDataSetTableAdapters
     {
     }
 
-    public partial class qryListPedido_OticaTableAdapter
-    {
+    public partial class qryListPedido_OticaTableAdapter {
     }
 }

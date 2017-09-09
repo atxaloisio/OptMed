@@ -64,7 +64,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtCodVendedorDe = new System.Windows.Forms.TextBox();
             this.txtNomeVendedorDe = new System.Windows.Forms.TextBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.gbTransportadora = new System.Windows.Forms.GroupBox();
             this.btnPesquisaTransportadoraAte = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.txtCodTransportadoraAte = new System.Windows.Forms.TextBox();
@@ -73,7 +73,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txtCodTransportadoraDe = new System.Windows.Forms.TextBox();
             this.txtNomeTransportadoraDe = new System.Windows.Forms.TextBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.gbCaixa = new System.Windows.Forms.GroupBox();
             this.cbCaixaAte = new System.Windows.Forms.ComboBox();
             this.cbCaixaDe = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -92,6 +92,8 @@
             this.txtIdTransportadoraDe = new System.Windows.Forms.TextBox();
             this.txtIdClienteAte = new System.Windows.Forms.TextBox();
             this.txtIdTransportadoraAte = new System.Windows.Forms.TextBox();
+            this.gbFilial = new System.Windows.Forms.GroupBox();
+            this.cbFilial = new System.Windows.Forms.ComboBox();
             this.pnlDados.SuspendLayout();
             this.pnlBotoes.SuspendLayout();
             this.pnlFiltro.SuspendLayout();
@@ -100,10 +102,11 @@
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox7.SuspendLayout();
+            this.gbTransportadora.SuspendLayout();
+            this.gbCaixa.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox9.SuspendLayout();
+            this.gbFilial.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlDados
@@ -113,7 +116,7 @@
             // 
             // btnFechar
             // 
-            this.btnFechar.Location = new System.Drawing.Point(4, 2157);
+            this.btnFechar.Location = new System.Drawing.Point(4, 2412);
             // 
             // pnlBotoes
             // 
@@ -121,14 +124,15 @@
             // 
             // pnlFiltro
             // 
+            this.pnlFiltro.Controls.Add(this.gbFilial);
             this.pnlFiltro.Controls.Add(this.txtIdTransportadoraAte);
             this.pnlFiltro.Controls.Add(this.txtIdClienteAte);
             this.pnlFiltro.Controls.Add(this.txtIdTransportadoraDe);
             this.pnlFiltro.Controls.Add(this.txtIdClienteDe);
             this.pnlFiltro.Controls.Add(this.groupBox9);
             this.pnlFiltro.Controls.Add(this.groupBox8);
-            this.pnlFiltro.Controls.Add(this.groupBox7);
-            this.pnlFiltro.Controls.Add(this.groupBox6);
+            this.pnlFiltro.Controls.Add(this.gbCaixa);
+            this.pnlFiltro.Controls.Add(this.gbTransportadora);
             this.pnlFiltro.Controls.Add(this.groupBox5);
             this.pnlFiltro.Controls.Add(this.groupBox2);
             this.pnlFiltro.Controls.Add(this.groupBox4);
@@ -530,22 +534,22 @@
             this.txtNomeVendedorDe.TabIndex = 2;
             this.txtNomeVendedorDe.TabStop = false;
             // 
-            // groupBox6
+            // gbTransportadora
             // 
-            this.groupBox6.Controls.Add(this.btnPesquisaTransportadoraAte);
-            this.groupBox6.Controls.Add(this.label11);
-            this.groupBox6.Controls.Add(this.txtCodTransportadoraAte);
-            this.groupBox6.Controls.Add(this.txtNomeTransportadoraAte);
-            this.groupBox6.Controls.Add(this.btnPesquisaTransportadoraDe);
-            this.groupBox6.Controls.Add(this.label12);
-            this.groupBox6.Controls.Add(this.txtCodTransportadoraDe);
-            this.groupBox6.Controls.Add(this.txtNomeTransportadoraDe);
-            this.groupBox6.Location = new System.Drawing.Point(7, 232);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(808, 46);
-            this.groupBox6.TabIndex = 5;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Transportadora";
+            this.gbTransportadora.Controls.Add(this.btnPesquisaTransportadoraAte);
+            this.gbTransportadora.Controls.Add(this.label11);
+            this.gbTransportadora.Controls.Add(this.txtCodTransportadoraAte);
+            this.gbTransportadora.Controls.Add(this.txtNomeTransportadoraAte);
+            this.gbTransportadora.Controls.Add(this.btnPesquisaTransportadoraDe);
+            this.gbTransportadora.Controls.Add(this.label12);
+            this.gbTransportadora.Controls.Add(this.txtCodTransportadoraDe);
+            this.gbTransportadora.Controls.Add(this.txtNomeTransportadoraDe);
+            this.gbTransportadora.Location = new System.Drawing.Point(7, 387);
+            this.gbTransportadora.Name = "gbTransportadora";
+            this.gbTransportadora.Size = new System.Drawing.Size(808, 46);
+            this.gbTransportadora.TabIndex = 5;
+            this.gbTransportadora.TabStop = false;
+            this.gbTransportadora.Text = "Transportadora";
             // 
             // btnPesquisaTransportadoraAte
             // 
@@ -634,18 +638,18 @@
             this.txtNomeTransportadoraDe.TabIndex = 2;
             this.txtNomeTransportadoraDe.TabStop = false;
             // 
-            // groupBox7
+            // gbCaixa
             // 
-            this.groupBox7.Controls.Add(this.cbCaixaAte);
-            this.groupBox7.Controls.Add(this.cbCaixaDe);
-            this.groupBox7.Controls.Add(this.label13);
-            this.groupBox7.Controls.Add(this.label14);
-            this.groupBox7.Location = new System.Drawing.Point(7, 277);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(396, 48);
-            this.groupBox7.TabIndex = 6;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Caixa";
+            this.gbCaixa.Controls.Add(this.cbCaixaAte);
+            this.gbCaixa.Controls.Add(this.cbCaixaDe);
+            this.gbCaixa.Controls.Add(this.label13);
+            this.gbCaixa.Controls.Add(this.label14);
+            this.gbCaixa.Location = new System.Drawing.Point(7, 432);
+            this.gbCaixa.Name = "gbCaixa";
+            this.gbCaixa.Size = new System.Drawing.Size(396, 48);
+            this.gbCaixa.TabIndex = 6;
+            this.gbCaixa.TabStop = false;
+            this.gbCaixa.Text = "Caixa";
             // 
             // cbCaixaAte
             // 
@@ -690,7 +694,7 @@
             this.groupBox8.Controls.Add(this.txtNrPedClienteDe);
             this.groupBox8.Controls.Add(this.label15);
             this.groupBox8.Controls.Add(this.label16);
-            this.groupBox8.Location = new System.Drawing.Point(7, 324);
+            this.groupBox8.Location = new System.Drawing.Point(7, 233);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(396, 48);
             this.groupBox8.TabIndex = 7;
@@ -736,7 +740,7 @@
             this.groupBox9.Controls.Add(this.cbStatusAte);
             this.groupBox9.Controls.Add(this.label17);
             this.groupBox9.Controls.Add(this.cbStatusDe);
-            this.groupBox9.Location = new System.Drawing.Point(7, 371);
+            this.groupBox9.Location = new System.Drawing.Point(7, 335);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(804, 48);
             this.groupBox9.TabIndex = 8;
@@ -824,6 +828,24 @@
             this.txtIdTransportadoraAte.TabStop = false;
             this.txtIdTransportadoraAte.Visible = false;
             // 
+            // gbFilial
+            // 
+            this.gbFilial.Controls.Add(this.cbFilial);
+            this.gbFilial.Location = new System.Drawing.Point(7, 281);
+            this.gbFilial.Name = "gbFilial";
+            this.gbFilial.Size = new System.Drawing.Size(396, 51);
+            this.gbFilial.TabIndex = 17;
+            this.gbFilial.TabStop = false;
+            this.gbFilial.Text = "Filial";
+            // 
+            // cbFilial
+            // 
+            this.cbFilial.FormattingEnabled = true;
+            this.cbFilial.Location = new System.Drawing.Point(8, 18);
+            this.cbFilial.Name = "cbFilial";
+            this.cbFilial.Size = new System.Drawing.Size(360, 24);
+            this.cbFilial.TabIndex = 18;
+            // 
             // frmRelFiltroPedido_Otica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -847,14 +869,15 @@
             this.groupBox2.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
+            this.gbTransportadora.ResumeLayout(false);
+            this.gbTransportadora.PerformLayout();
+            this.gbCaixa.ResumeLayout(false);
+            this.gbCaixa.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
+            this.gbFilial.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -887,7 +910,7 @@
         private System.Windows.Forms.Button btnPesquisaPedidoDe;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCodPedidoDe;
-        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox gbTransportadora;
         private System.Windows.Forms.Button btnPesquisaTransportadoraAte;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtCodTransportadoraAte;
@@ -905,7 +928,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtCodVendedorDe;
         private System.Windows.Forms.TextBox txtNomeVendedorDe;
-        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox gbCaixa;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox cbCaixaAte;
@@ -924,5 +947,7 @@
         private System.Windows.Forms.TextBox txtIdClienteAte;
         private System.Windows.Forms.TextBox txtIdTransportadoraDe;
         private System.Windows.Forms.TextBox txtIdClienteDe;
+        private System.Windows.Forms.GroupBox gbFilial;
+        private System.Windows.Forms.ComboBox cbFilial;
     }
 }

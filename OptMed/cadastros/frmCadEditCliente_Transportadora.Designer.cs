@@ -38,9 +38,14 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.pnlBotoes.SuspendLayout();
-            this.pnlPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epValidaDados)).BeginInit();
+            this.pnlPrincipal.SuspendLayout();
+            this.pnlJanela.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.Location = new System.Drawing.Point(3, 353);
             // 
             // pnlBotoes
             // 
@@ -48,15 +53,20 @@
             // 
             // pnlPrincipal
             // 
-            this.pnlPrincipal.Controls.Add(this.txtIdCliente);
-            this.pnlPrincipal.Controls.Add(this.txtId);
-            this.pnlPrincipal.Controls.Add(this.label3);
-            this.pnlPrincipal.Controls.Add(this.cbTransportadora);
-            this.pnlPrincipal.Controls.Add(this.btnPesquisa);
-            this.pnlPrincipal.Controls.Add(this.label2);
-            this.pnlPrincipal.Controls.Add(this.txtCodCliIntegracao);
-            this.pnlPrincipal.Controls.Add(this.txtClienteNome);
             this.pnlPrincipal.Size = new System.Drawing.Size(570, 112);
+            // 
+            // pnlJanela
+            // 
+            this.pnlJanela.Controls.Add(this.txtIdCliente);
+            this.pnlJanela.Controls.Add(this.txtId);
+            this.pnlJanela.Controls.Add(this.label3);
+            this.pnlJanela.Controls.Add(this.cbTransportadora);
+            this.pnlJanela.Controls.Add(this.btnPesquisa);
+            this.pnlJanela.Controls.Add(this.label2);
+            this.pnlJanela.Controls.Add(this.txtCodCliIntegracao);
+            this.pnlJanela.Controls.Add(this.txtClienteNome);
+            this.pnlJanela.Location = new System.Drawing.Point(65, 19);
+            this.pnlJanela.Size = new System.Drawing.Size(570, 112);
             // 
             // btnPesquisa
             // 
@@ -154,12 +164,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(685, 112);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "frmCadEditCliente_Transportadora";
             this.Text = "Cliente x Formas de Pagamento";
+            this.Activated += new System.EventHandler(this.frmCadEditCliente_Transportadora_Activated);
             this.pnlBotoes.ResumeLayout(false);
-            this.pnlPrincipal.ResumeLayout(false);
-            this.pnlPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epValidaDados)).EndInit();
+            this.pnlPrincipal.ResumeLayout(false);
+            this.pnlJanela.ResumeLayout(false);
+            this.pnlJanela.PerformLayout();
             this.ResumeLayout(false);
 
         }

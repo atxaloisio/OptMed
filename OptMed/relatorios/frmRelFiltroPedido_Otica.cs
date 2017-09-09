@@ -178,6 +178,47 @@ namespace optmed
             SetupCaixa(cbCaixaAte);
             SetupStatus(cbStatusDe);
             SetupStatus(cbStatusAte);
+            SetupTransportadora();
+            setupcbFilial();
+        }
+
+        private void setupcbFilial()
+        {
+            if (stUsuario.UsuarioLogado.Id_filial == null)
+            {
+                FilialBLL filialBLL = new FilialBLL();
+                List<Filial> lstFilial = filialBLL.getFilial();
+                cbFilial.DataSource = lstFilial;
+                cbFilial.ValueMember = "Id";
+                cbFilial.DisplayMember = "nome_fantasia";
+                cbFilial.SelectedIndex = -1;
+                if (lstFilial.Count <= 0)
+                {
+                    cbFilial.Enabled = false;
+                    gbFilial.Visible = false;
+                }
+                else
+                {
+                    cbFilial.Enabled = true;
+                    gbFilial.Visible = true;
+                }
+            }
+            
+        }
+
+        private void SetupTransportadora()
+        {
+            bool vwLaboratorio = false;
+            string layoutLaboratorio = Parametro.GetParametro("layoutLaboratorio");
+            if (!string.IsNullOrEmpty(layoutLaboratorio))
+            {
+                vwLaboratorio = Convert.ToBoolean(layoutLaboratorio);
+            }
+
+            gbCaixa.Visible = vwLaboratorio;
+            gbCaixa.Enabled = vwLaboratorio;
+            gbTransportadora.Visible = vwLaboratorio;
+            gbTransportadora.Enabled = vwLaboratorio;
         }
 
         private void SetupStatus(ComboBox cb)
@@ -337,6 +378,26 @@ namespace optmed
             if (cbStatusAte.SelectedValue != null)
             {
                 frm.statusAte = (int)cbStatusAte.SelectedValue;
+            }
+
+            if (stUsuario.UsuarioLogado.Id_empresa != null)
+            {
+                frm.empresa = stUsuario.UsuarioLogado.Id_empresa;
+            }
+
+            if (stUsuario.UsuarioLogado.Id_filial != null)
+            {
+                frm.filial = stUsuario.UsuarioLogado.Id_filial;
+            }
+            else
+            {
+                if (gbFilial.Visible)
+                {
+                    if (cbFilial.SelectedValue != null)
+                    {
+                        frm.filial = Convert.ToInt64(cbFilial.SelectedValue);
+                    }
+                }
             }
 
             frm.ExibeDialogo();

@@ -49,6 +49,15 @@ namespace optmed
             frmInstancia = new frmCadEditPerfil();
         }
 
+        protected override void setTamanhoPagina()
+        {
+            string NrRegPagListagem = Parametro.GetParametro("NrRegPag");
+            if (!string.IsNullOrEmpty(NrRegPagListagem))
+            {
+                tamanhoPagina = Convert.ToInt32(NrRegPagListagem);
+            }
+        }
+
         protected override void formataColunagridFiltros(DataGridView gridFiltros)
         {
             base.formataColunagridFiltros(gridFiltros);

@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LinqKit">
+      <HintPath>..\Utils\LinqKit.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -55,6 +58,7 @@
     <Compile Include="Conta_CorrenteBLL.cs" />
     <Compile Include="EmpresaBLL.cs" />
     <Compile Include="Familia_ProdutoBLL.cs" />
+    <Compile Include="FilialBLL.cs" />
     <Compile Include="FormasPagVendaBLL.cs" />
     <Compile Include="FuncaoBLL.cs" />
     <Compile Include="Funcao_PerfilBLL.cs" />

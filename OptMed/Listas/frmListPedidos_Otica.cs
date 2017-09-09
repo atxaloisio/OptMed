@@ -23,12 +23,12 @@ namespace optmed
         #region Constante de Colunas da Grid
         private const int COL_ID            = 0;
         private const int COL_PEDIDO        = 1;
-        private const int COL_OS            = 2;        
-        private const int COL_CLIENTE       = 3;
-        private const int COL_CONDPAG       = 4;
-        private const int COL_VENDEDOR      = 5;
-        private const int COL_LABORATORIO   = 6;
-        private const int COL_DTEMISSAO     = 7;
+        private const int COL_OS            = 2;
+        private const int COL_DTEMISSAO     = 3;
+        private const int COL_CLIENTE       = 4;
+        private const int COL_CONDPAG       = 5;
+        private const int COL_VENDEDOR      = 6;
+        private const int COL_LABORATORIO   = 7;       
         private const int COL_TOTAL         = 8;
         private const int COL_STATUS        = 9;
         private const int COL_CANCELADO     = 10;
@@ -53,17 +53,22 @@ namespace optmed
             frmInstancia = new frmCadEditPedido_Otica();
         }
 
+        protected override void setTamanhoPagina()
+        {
+            string NrRegPagListagem = Parametro.GetParametro("NrRegPag");
+            if (!string.IsNullOrEmpty(NrRegPagListagem))
+            {
+                tamanhoPagina = Convert.ToInt32(NrRegPagListagem);
+            }
+        }
+
         protected override void formataColunagridFiltros(DataGridView gridFiltros)
         {
             base.formataColunagridFiltros(gridFiltros);
             //altera o nome das colunas                 
             gridFiltros.Columns.Add("ID", "Id");
             gridFiltros.Columns.Add("PEDIDO", "Pedido");
-            gridFiltros.Columns.Add("NRPEDCLIENTE", "OS");            
-            gridFiltros.Columns.Add("CLIENTE", "Cliente");
-            gridFiltros.Columns.Add("CONDPAGTO", "Cond. Pagamento");
-            gridFiltros.Columns.Add("VENDEDOR", "Vendedor");
-            gridFiltros.Columns.Add("laboratorio", "Laboratório");            
+            gridFiltros.Columns.Add("NRPEDCLIENTE", "OS");
 
             DataGridViewMaskedTextColumn colDtEmissao = new DataGridViewMaskedTextColumn("99/99/9999");
             colDtEmissao.DataPropertyName = "DTEMISSAO";
@@ -75,6 +80,11 @@ namespace optmed
             colDtEmissao.DefaultCellStyle.Format = "d";
             gridFiltros.Columns.Add(colDtEmissao);
 
+            gridFiltros.Columns.Add("CLIENTE", "Cliente");
+            gridFiltros.Columns.Add("CONDPAGTO", "Cond. Pagamento");
+            gridFiltros.Columns.Add("VENDEDOR", "Vendedor");
+            gridFiltros.Columns.Add("laboratorio", "Laboratório");            
+            
             gridFiltros.Columns.Add("Total", "Total");
 
             StatusPedido sp = new StatusPedido();
@@ -114,7 +124,11 @@ namespace optmed
 
             gridFiltros.Columns[COL_OS].Width = 80;
             gridFiltros.Columns[COL_OS].ValueType = typeof(string);
-            gridFiltros.Columns[COL_OS].SortMode = DataGridViewColumnSortMode.Programmatic;            
+            gridFiltros.Columns[COL_OS].SortMode = DataGridViewColumnSortMode.Programmatic;
+
+            gridFiltros.Columns[COL_DTEMISSAO].Width = 130;
+            gridFiltros.Columns[COL_DTEMISSAO].DefaultCellStyle = new DataGridViewCellStyle(gridFiltros.Columns[COL_DTEMISSAO].DefaultCellStyle);
+            gridFiltros.Columns[COL_DTEMISSAO].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             gridFiltros.Columns[COL_CLIENTE].Width = 380;
             gridFiltros.Columns[COL_CLIENTE].ValueType = typeof(string);
@@ -131,11 +145,7 @@ namespace optmed
             gridFiltros.Columns[COL_LABORATORIO].Width = 250;
             gridFiltros.Columns[COL_LABORATORIO].ValueType = typeof(string);
             gridFiltros.Columns[COL_LABORATORIO].SortMode = DataGridViewColumnSortMode.Programmatic;
-
-            gridFiltros.Columns[COL_DTEMISSAO].Width = 130;
-            gridFiltros.Columns[COL_DTEMISSAO].DefaultCellStyle = new DataGridViewCellStyle(gridFiltros.Columns[COL_DTEMISSAO].DefaultCellStyle);
-            gridFiltros.Columns[COL_DTEMISSAO].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
+            
             gridFiltros.Columns[COL_TOTAL].Width = 130;
             gridFiltros.Columns[COL_TOTAL].ValueType = typeof(decimal);
             gridFiltros.Columns[COL_TOTAL].SortMode = DataGridViewColumnSortMode.Programmatic;
@@ -154,6 +164,7 @@ namespace optmed
             gridFiltros.EditingControlShowing += new DataGridViewEditingControlShowingEventHandler(gridFiltros_EditingControlShowing);
 
             //Adiciona uma linha ao grid.
+            gridFiltros.DefaultCellStyle.SelectionBackColor = Color.Green;
             gridFiltros.Rows.Add();
             
         }
@@ -262,6 +273,7 @@ namespace optmed
         protected override void formataColunagridDados(DataGridView gridDados)
         {
             base.formataColunagridDados(gridDados);
+            gridDados.DefaultCellStyle.SelectionBackColor = Color.Green;
 
             gridDados.Columns[COL_ID].Width = 120;
             gridDados.Columns[COL_ID].ValueType = typeof(int);
@@ -783,7 +795,7 @@ namespace optmed
                                     }
                                 }
 
-                                CancelarPedido.atualizagrid = true;
+                                //CancelarPedido.atualizagrid = true;
 
                             }
 
@@ -791,11 +803,11 @@ namespace optmed
                     }
 
 
-                    if (CancelarPedido.atualizagrid)
-                    {
-                        carregaConsulta();
-                        AtualizaContadores();
-                    }
+                    //if (CancelarPedido.atualizagrid)
+                    //{
+                    //    carregaConsulta();
+                    //    AtualizaContadores();
+                    //}
                 }
             }
             catch (Exception ex)

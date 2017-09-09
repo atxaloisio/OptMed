@@ -39,7 +39,7 @@ namespace optmed
         {
             try
             {
-                atualizagrid = true;
+                
                 if (ValidaAcessoFuncao(Operacao.Salvar))
                 {
                     if (salvar(sender, e))

@@ -49,8 +49,21 @@
             this.pnlBotoes.Controls.SetChildIndex(this.btnImprimir, 0);
             this.pnlBotoes.Controls.SetChildIndex(this.btnCancelar, 0);
             // 
+            // btnExcluir
+            // 
+            this.btnExcluir.BackColor = System.Drawing.Color.Green;
+            // 
+            // btnIncluir
+            // 
+            this.btnIncluir.BackColor = System.Drawing.Color.Green;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.Color.Green;
+            // 
             // btnFechar
             // 
+            this.btnFechar.BackColor = System.Drawing.Color.Green;
             this.btnFechar.Location = new System.Drawing.Point(4, 372);
             // 
             // lblTotalPaginas
@@ -63,18 +76,22 @@
             // 
             // btnPrimeiro
             // 
+            this.btnPrimeiro.BackColor = System.Drawing.Color.Green;
             this.btnPrimeiro.Location = new System.Drawing.Point(6, 345);
             // 
             // btnAnterior
             // 
+            this.btnAnterior.BackColor = System.Drawing.Color.Green;
             this.btnAnterior.Location = new System.Drawing.Point(34, 345);
             // 
             // btnProximo
             // 
+            this.btnProximo.BackColor = System.Drawing.Color.Green;
             this.btnProximo.Location = new System.Drawing.Point(60, 345);
             // 
             // btnUltimo
             // 
+            this.btnUltimo.BackColor = System.Drawing.Color.Green;
             this.btnUltimo.Location = new System.Drawing.Point(86, 345);
             // 
             // lblTotalRegistros
@@ -83,11 +100,12 @@
             // 
             // btnImprimir
             // 
+            this.btnImprimir.BackColor = System.Drawing.Color.Green;
             this.btnImprimir.Location = new System.Drawing.Point(4, 139);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnCancelar.BackColor = System.Drawing.Color.Green;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;

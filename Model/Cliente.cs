@@ -69,6 +69,8 @@ namespace Model
         public Nullable<System.DateTime> alteracao { get; set; }
         public string usuario_alteracao { get; set; }
         public string sincronizar { get; set; }
+        public Nullable<long> Id_empresa { get; set; }
+        public Nullable<long> Id_filial { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cliente_Tag> cliente_tag { get; set; }

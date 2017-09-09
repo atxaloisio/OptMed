@@ -34,16 +34,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.chkInativo = new System.Windows.Forms.CheckBox();
             this.pnlBotoes.SuspendLayout();
-            this.pnlPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epValidaDados)).BeginInit();
+            this.pnlPrincipal.SuspendLayout();
+            this.pnlJanela.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSalvar
             // 
             this.btnSalvar.TabIndex = 0;
             // 
-            // btnCancelar
+            // btnFechar
             // 
+            this.btnFechar.Location = new System.Drawing.Point(3, 1);
             this.btnFechar.TabIndex = 1;
             // 
             // btnIncluir
@@ -52,16 +54,21 @@
             // 
             // pnlBotoes
             // 
-            this.pnlBotoes.Size = new System.Drawing.Size(115, 114);
+            this.pnlBotoes.Size = new System.Drawing.Size(115, 230);
             // 
             // pnlPrincipal
             // 
-            this.pnlPrincipal.Controls.Add(this.chkInativo);
-            this.pnlPrincipal.Controls.Add(this.txtNumero);
-            this.pnlPrincipal.Controls.Add(this.label2);
-            this.pnlPrincipal.Controls.Add(this.txtId);
-            this.pnlPrincipal.Controls.Add(this.label1);
-            this.pnlPrincipal.Size = new System.Drawing.Size(176, 114);
+            this.pnlPrincipal.Size = new System.Drawing.Size(435, 230);
+            // 
+            // pnlJanela
+            // 
+            this.pnlJanela.Controls.Add(this.chkInativo);
+            this.pnlJanela.Controls.Add(this.txtNumero);
+            this.pnlJanela.Controls.Add(this.label2);
+            this.pnlJanela.Controls.Add(this.txtId);
+            this.pnlJanela.Controls.Add(this.label1);
+            this.pnlJanela.Location = new System.Drawing.Point(195, 77);
+            this.pnlJanela.Size = new System.Drawing.Size(176, 114);
             // 
             // txtNumero
             // 
@@ -117,13 +124,16 @@
             // frmCadEditCaixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(291, 114);
+            this.ClientSize = new System.Drawing.Size(550, 230);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "frmCadEditCaixa";
             this.Text = "Caixa";
+            this.Activated += new System.EventHandler(this.frmCadEditCaixa_Activated);
             this.pnlBotoes.ResumeLayout(false);
-            this.pnlPrincipal.ResumeLayout(false);
-            this.pnlPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epValidaDados)).EndInit();
+            this.pnlPrincipal.ResumeLayout(false);
+            this.pnlJanela.ResumeLayout(false);
+            this.pnlJanela.PerformLayout();
             this.ResumeLayout(false);
 
         }

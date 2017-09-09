@@ -198,5 +198,10 @@ namespace optmed
                 SetupCidade(cbUF.Text);
             }
         }
+
+        private void frmCadEditVendedor_Localidade_Activated(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
     }
 }

@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 using Utils;
 using Model;
+using BLL;
 
 namespace optmed
 {
@@ -43,6 +44,9 @@ namespace optmed
         public int? statusDe { get; set; }
         public int? statusAte { get; set; }
 
+        public Int64? empresa { get; set; }
+        public Int64? filial { get; set; }
+
         public frmRelListPedido_Otica()
         {
             InitializeComponent();
@@ -50,12 +54,14 @@ namespace optmed
 
         protected override void CarregaRelatorio()
         {
+            string msgRodape = string.Empty;
 
             rvRelatorios.LocalReport.DataSources.Clear();
             rvRelatorios.Reset();
             rvRelatorios.LocalReport.ReportEmbeddedResource = "optmed.relatorios.relListPedido_Otica.rdlc";
             dbintegracaoDataSetTableAdapters.qryListPedido_OticaTableAdapter lstPed = new dbintegracaoDataSetTableAdapters.qryListPedido_OticaTableAdapter();
             dbintegracaoDataSetTableAdapters.empresa_logoTableAdapter Empresa_Logo = new dbintegracaoDataSetTableAdapters.empresa_logoTableAdapter();
+            dbintegracaoDataSetTableAdapters.filial_logoTableTableAdapter Filial_Logo = new dbintegracaoDataSetTableAdapters.filial_logoTableTableAdapter();
 
             DataTable dt = new DataTable();
             DataTable dtl = new DataTable();
@@ -77,10 +83,18 @@ namespace optmed
                                 transportadoraDe,
                                 transportadoraAte,
                                 caixaDe,
-                                caixaAte);
+                                caixaAte,
+                                filial);
 
-            dtl = Empresa_Logo.GetData();
-
+            if (filial != null)
+            {
+                dtl = Filial_Logo.GetData(Convert.ToInt64(filial));
+            }
+            else
+            {
+                dtl = Empresa_Logo.GetData();
+            }
+            
             ReportDataSource ds = new ReportDataSource(dt.TableName, dt);
             ReportDataSource ds2 = new ReportDataSource(dtl.TableName, dtl);
 
@@ -90,6 +104,9 @@ namespace optmed
             rvRelatorios.LocalReport.DataSources.Add(ds2);
 
             //rvRelatorios.LocalReport.SubreportProcessing += new SubreportProcessingEventHandler(onSubreportProcessing);
+
+            
+
 
             ReportParameterCollection parametros = new ReportParameterCollection();
 

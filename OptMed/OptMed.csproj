@@ -195,6 +195,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cadastros\frmCadEditFilial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastros\frmCadEditFilial.Designer.cs">
+      <DependentUpon>frmCadEditFilial.cs</DependentUpon>
+    </Compile>
     <Compile Include="cadastros\frmCadEditFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -615,6 +621,9 @@
     <Compile Include="utilitarios\frmUtilCancelarPedido.Designer.cs">
       <DependentUpon>frmUtilCancelarPedido.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="cadastros\frmCadEditFilial.resx">
+      <DependentUpon>frmCadEditFilial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="cadastros\frmCadEditFornecedor.resx">
       <DependentUpon>frmCadEditFornecedor.cs</DependentUpon>
     </EmbeddedResource>
@@ -878,6 +887,7 @@
   <ItemGroup>
     <Content Include="oculos.ico" />
     <Content Include="oculos2.ico" />
+    <None Include="Resources\OptMed.png" />
     <None Include="Resources\um.png" />
     <None Include="Resources\tres.png" />
     <None Include="Resources\dois.png" />

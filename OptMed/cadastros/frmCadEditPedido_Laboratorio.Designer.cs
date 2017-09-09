@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblPedidoCancelado = new System.Windows.Forms.Label();
             this.txtValorTotal = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtIdPedInfoadic = new System.Windows.Forms.TextBox();
@@ -65,6 +66,8 @@
             this.txtDtFechamento = new System.Windows.Forms.MaskedTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
+            this.txtDtInc = new System.Windows.Forms.TextBox();
+            this.txtUsuarioInc = new System.Windows.Forms.TextBox();
             this.txtIdPedLente = new System.Windows.Forms.TextBox();
             this.txtIdPedArmacao = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -151,10 +154,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnRemoveItem = new System.Windows.Forms.Button();
             this.btnAddItem = new System.Windows.Forms.Button();
-            this.lblPedidoCancelado = new System.Windows.Forms.Label();
             this.pnlBotoes.SuspendLayout();
-            this.pnlPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epValidaDados)).BeginInit();
+            this.pnlPrincipal.SuspendLayout();
+            this.pnlJanela.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox20.SuspendLayout();
@@ -180,16 +183,25 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // btnFechar
+            // 
+            this.btnFechar.Location = new System.Drawing.Point(3, 775);
+            // 
             // pnlBotoes
             // 
             this.pnlBotoes.Size = new System.Drawing.Size(115, 597);
             // 
             // pnlPrincipal
             // 
-            this.pnlPrincipal.Controls.Add(this.groupBox3);
-            this.pnlPrincipal.Controls.Add(this.groupBox2);
-            this.pnlPrincipal.Controls.Add(this.groupBox1);
             this.pnlPrincipal.Size = new System.Drawing.Size(1007, 597);
+            // 
+            // pnlJanela
+            // 
+            this.pnlJanela.Controls.Add(this.groupBox3);
+            this.pnlJanela.Controls.Add(this.groupBox2);
+            this.pnlJanela.Controls.Add(this.groupBox1);
+            this.pnlJanela.Location = new System.Drawing.Point(9, 20);
+            this.pnlJanela.Size = new System.Drawing.Size(1007, 597);
             // 
             // groupBox1
             // 
@@ -231,6 +243,17 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados Pedido";
+            // 
+            // lblPedidoCancelado
+            // 
+            this.lblPedidoCancelado.AutoSize = true;
+            this.lblPedidoCancelado.ForeColor = System.Drawing.Color.Red;
+            this.lblPedidoCancelado.Location = new System.Drawing.Point(638, 23);
+            this.lblPedidoCancelado.Name = "lblPedidoCancelado";
+            this.lblPedidoCancelado.Size = new System.Drawing.Size(135, 16);
+            this.lblPedidoCancelado.TabIndex = 70;
+            this.lblPedidoCancelado.Text = "PEDIDO CANCELADO";
+            this.lblPedidoCancelado.Visible = false;
             // 
             // txtValorTotal
             // 
@@ -614,6 +637,8 @@
             // 
             // groupBox20
             // 
+            this.groupBox20.Controls.Add(this.txtDtInc);
+            this.groupBox20.Controls.Add(this.txtUsuarioInc);
             this.groupBox20.Controls.Add(this.txtIdPedLente);
             this.groupBox20.Controls.Add(this.txtIdPedArmacao);
             this.groupBox20.Controls.Add(this.label16);
@@ -638,6 +663,28 @@
             this.groupBox20.TabIndex = 8;
             this.groupBox20.TabStop = false;
             this.groupBox20.Text = "Dados da armação";
+            // 
+            // txtDtInc
+            // 
+            this.epValidaDados.SetFraseErro(this.txtDtInc, "");
+            this.txtDtInc.Location = new System.Drawing.Point(884, 46);
+            this.txtDtInc.Name = "txtDtInc";
+            this.epValidaDados.SetObrigatorio(this.txtDtInc, false);
+            this.txtDtInc.Size = new System.Drawing.Size(71, 23);
+            this.txtDtInc.TabIndex = 54;
+            this.txtDtInc.TabStop = false;
+            this.txtDtInc.Visible = false;
+            // 
+            // txtUsuarioInc
+            // 
+            this.epValidaDados.SetFraseErro(this.txtUsuarioInc, "");
+            this.txtUsuarioInc.Location = new System.Drawing.Point(809, 46);
+            this.txtUsuarioInc.Name = "txtUsuarioInc";
+            this.epValidaDados.SetObrigatorio(this.txtUsuarioInc, false);
+            this.txtUsuarioInc.Size = new System.Drawing.Size(71, 23);
+            this.txtUsuarioInc.TabIndex = 53;
+            this.txtUsuarioInc.TabStop = false;
+            this.txtUsuarioInc.Visible = false;
             // 
             // txtIdPedLente
             // 
@@ -1617,29 +1664,20 @@
             this.btnAddItem.UseVisualStyleBackColor = false;
             this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
             // 
-            // lblPedidoCancelado
-            // 
-            this.lblPedidoCancelado.AutoSize = true;
-            this.lblPedidoCancelado.ForeColor = System.Drawing.Color.Red;
-            this.lblPedidoCancelado.Location = new System.Drawing.Point(638, 23);
-            this.lblPedidoCancelado.Name = "lblPedidoCancelado";
-            this.lblPedidoCancelado.Size = new System.Drawing.Size(135, 16);
-            this.lblPedidoCancelado.TabIndex = 70;
-            this.lblPedidoCancelado.Text = "PEDIDO CANCELADO";
-            this.lblPedidoCancelado.Visible = false;
-            // 
             // frmCadEditPedido_Laboratorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScroll = true;
             this.CancelButton = null;
             this.ClientSize = new System.Drawing.Size(1122, 597);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmCadEditPedido_Laboratorio";
             this.Text = "Pedido de Venda";
+            this.Activated += new System.EventHandler(this.frmCadEditPedido_Laboratorio_Activated);
             this.pnlBotoes.ResumeLayout(false);
-            this.pnlPrincipal.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.epValidaDados)).EndInit();
+            this.pnlPrincipal.ResumeLayout(false);
+            this.pnlJanela.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -1805,5 +1843,7 @@
         private System.Windows.Forms.Label lblNrPedCliente;
         private System.Windows.Forms.TextBox txtNrPedCliente;
         private System.Windows.Forms.Label lblPedidoCancelado;
+        private System.Windows.Forms.TextBox txtDtInc;
+        private System.Windows.Forms.TextBox txtUsuarioInc;
     }
 }

@@ -38,25 +38,35 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.pnlBotoes.SuspendLayout();
-            this.pnlPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epValidaDados)).BeginInit();
+            this.pnlPrincipal.SuspendLayout();
+            this.pnlJanela.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.Location = new System.Drawing.Point(3, 458);
             // 
             // pnlBotoes
             // 
-            this.pnlBotoes.Size = new System.Drawing.Size(115, 112);
+            this.pnlBotoes.Size = new System.Drawing.Size(115, 217);
             // 
             // pnlPrincipal
             // 
-            this.pnlPrincipal.Controls.Add(this.txtIdCliente);
-            this.pnlPrincipal.Controls.Add(this.txtId);
-            this.pnlPrincipal.Controls.Add(this.label3);
-            this.pnlPrincipal.Controls.Add(this.cbCondPagamento);
-            this.pnlPrincipal.Controls.Add(this.btnPesquisa);
-            this.pnlPrincipal.Controls.Add(this.label2);
-            this.pnlPrincipal.Controls.Add(this.txtCodCliIntegracao);
-            this.pnlPrincipal.Controls.Add(this.txtClienteNome);
-            this.pnlPrincipal.Size = new System.Drawing.Size(619, 112);
+            this.pnlPrincipal.Size = new System.Drawing.Size(778, 217);
+            // 
+            // pnlJanela
+            // 
+            this.pnlJanela.Controls.Add(this.txtIdCliente);
+            this.pnlJanela.Controls.Add(this.txtId);
+            this.pnlJanela.Controls.Add(this.label3);
+            this.pnlJanela.Controls.Add(this.cbCondPagamento);
+            this.pnlJanela.Controls.Add(this.btnPesquisa);
+            this.pnlJanela.Controls.Add(this.label2);
+            this.pnlJanela.Controls.Add(this.txtCodCliIntegracao);
+            this.pnlJanela.Controls.Add(this.txtClienteNome);
+            this.pnlJanela.Location = new System.Drawing.Point(145, 72);
+            this.pnlJanela.Size = new System.Drawing.Size(619, 112);
             // 
             // btnPesquisa
             // 
@@ -153,13 +163,16 @@
             // frmCadEditCliente_Parcela
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(734, 112);
+            this.ClientSize = new System.Drawing.Size(893, 217);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "frmCadEditCliente_Parcela";
             this.Text = "Cliente x Formas de Pagamento";
+            this.Activated += new System.EventHandler(this.frmCadEditCliente_Parcela_Activated);
             this.pnlBotoes.ResumeLayout(false);
-            this.pnlPrincipal.ResumeLayout(false);
-            this.pnlPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epValidaDados)).EndInit();
+            this.pnlPrincipal.ResumeLayout(false);
+            this.pnlJanela.ResumeLayout(false);
+            this.pnlJanela.PerformLayout();
             this.ResumeLayout(false);
 
         }

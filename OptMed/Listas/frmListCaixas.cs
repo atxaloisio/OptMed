@@ -41,6 +41,15 @@ namespace optmed
 
         #region Metodos Sobreescritos
 
+        protected override void setTamanhoPagina()
+        {            
+            string NrRegPagListagem = Parametro.GetParametro("NrRegPag");
+            if (!string.IsNullOrEmpty(NrRegPagListagem))
+            {
+                tamanhoPagina = Convert.ToInt32(NrRegPagListagem);
+            }
+        }
+
         protected override void InstanciarFormulario()
         {
             frmInstancia = new frmCadEditCaixa();

@@ -29,6 +29,27 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcParcelaPedidoView));
+            this.gbParcelas = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvParcelas = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbFormaPagamento = new System.Windows.Forms.ComboBox();
+            this.txtNrDias = new System.Windows.Forms.TextBox();
+            this.txtIdPedido = new System.Windows.Forms.TextBox();
+            this.txtIdParcela = new System.Windows.Forms.TextBox();
+            this.lblParcela = new System.Windows.Forms.Label();
+            this.chkPago = new System.Windows.Forms.CheckBox();
+            this.btnDown = new System.Windows.Forms.Button();
+            this.btnUp = new System.Windows.Forms.Button();
+            this.txtPercentual = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtValor = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtDtPagamento = new System.Windows.Forms.MaskedTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtDtVencimento = new System.Windows.Forms.MaskedTextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblPedidoCancelado = new System.Windows.Forms.Label();
             this.txtIdPedInfoadic = new System.Windows.Forms.TextBox();
@@ -65,527 +86,41 @@
             this.txtClienteNome = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtDtFechamento = new System.Windows.Forms.MaskedTextBox();
-            this.gbParcelas = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvParcelas = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cbFormaPagamento = new System.Windows.Forms.ComboBox();
-            this.txtNrDias = new System.Windows.Forms.TextBox();
-            this.txtIdPedido = new System.Windows.Forms.TextBox();
-            this.txtIdParcela = new System.Windows.Forms.TextBox();
-            this.lblParcela = new System.Windows.Forms.Label();
-            this.chkPago = new System.Windows.Forms.CheckBox();
-            this.btnDown = new System.Windows.Forms.Button();
-            this.btnUp = new System.Windows.Forms.Button();
-            this.txtPercentual = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtValor = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtDtPagamento = new System.Windows.Forms.MaskedTextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtDtVencimento = new System.Windows.Forms.MaskedTextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.pnlBotoes.SuspendLayout();
-            this.pnlPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epValidaDados)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.pnlPrincipal.SuspendLayout();
+            this.pnlJanela.SuspendLayout();
             this.gbParcelas.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParcelas)).BeginInit();
             this.panel2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnFechar
             // 
-            this.btnFechar.Location = new System.Drawing.Point(3, 73);
+            this.btnFechar.Location = new System.Drawing.Point(3, 203);
             // 
             // btnIncluir
             // 
             this.btnIncluir.Image = global::optmed.Properties.Resources.Imprimir;
-            this.btnIncluir.Location = new System.Drawing.Point(3, 39);
             this.btnIncluir.Text = "&Recibo";
             this.btnIncluir.Visible = true;
             // 
             // pnlBotoes
             // 
-            this.pnlBotoes.Size = new System.Drawing.Size(115, 360);
+            this.pnlBotoes.Size = new System.Drawing.Size(115, 438);
             // 
             // pnlPrincipal
             // 
-            this.pnlPrincipal.Controls.Add(this.gbParcelas);
-            this.pnlPrincipal.Controls.Add(this.groupBox1);
-            this.pnlPrincipal.Size = new System.Drawing.Size(1007, 360);
+            this.pnlPrincipal.Size = new System.Drawing.Size(1007, 438);
             // 
-            // groupBox1
+            // pnlJanela
             // 
-            this.groupBox1.Controls.Add(this.lblPedidoCancelado);
-            this.groupBox1.Controls.Add(this.txtIdPedInfoadic);
-            this.groupBox1.Controls.Add(this.lblLaboratorio);
-            this.groupBox1.Controls.Add(this.txtLaboratorio);
-            this.groupBox1.Controls.Add(this.txtCRM);
-            this.groupBox1.Controls.Add(this.lblCRM);
-            this.groupBox1.Controls.Add(this.lblNomeMedico);
-            this.groupBox1.Controls.Add(this.txtNomeMedico);
-            this.groupBox1.Controls.Add(this.cbCaixa);
-            this.groupBox1.Controls.Add(this.label25);
-            this.groupBox1.Controls.Add(this.cbVendedor);
-            this.groupBox1.Controls.Add(this.lblNrPedCliente);
-            this.groupBox1.Controls.Add(this.txtNrPedCliente);
-            this.groupBox1.Controls.Add(this.txtDtEmissao);
-            this.groupBox1.Controls.Add(this.txtIdCliente);
-            this.groupBox1.Controls.Add(this.lblNrCaixa);
-            this.groupBox1.Controls.Add(this.lblMotivoEntrega);
-            this.groupBox1.Controls.Add(this.cbMotivoEntrega);
-            this.groupBox1.Controls.Add(this.txtHrPrevEntrega);
-            this.groupBox1.Controls.Add(this.txtDtPrevEntrega);
-            this.groupBox1.Controls.Add(this.lblPrevEntrega);
-            this.groupBox1.Controls.Add(this.btnPesquisa);
-            this.groupBox1.Controls.Add(this.lblDtFechamento);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.lblTransportadora);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.cbTransportadora);
-            this.groupBox1.Controls.Add(this.cbCondPagamento);
-            this.groupBox1.Controls.Add(this.txtCodCliIntegracao);
-            this.groupBox1.Controls.Add(this.txtId);
-            this.groupBox1.Controls.Add(this.txtClienteNome);
-            this.groupBox1.Controls.Add(this.txtCodigo);
-            this.groupBox1.Controls.Add(this.txtDtFechamento);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1005, 144);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Dados Pedido";
-            // 
-            // lblPedidoCancelado
-            // 
-            this.lblPedidoCancelado.AutoSize = true;
-            this.lblPedidoCancelado.ForeColor = System.Drawing.Color.Red;
-            this.lblPedidoCancelado.Location = new System.Drawing.Point(657, 23);
-            this.lblPedidoCancelado.Name = "lblPedidoCancelado";
-            this.lblPedidoCancelado.Size = new System.Drawing.Size(135, 16);
-            this.lblPedidoCancelado.TabIndex = 70;
-            this.lblPedidoCancelado.Text = "PEDIDO CANCELADO";
-            this.lblPedidoCancelado.Visible = false;
-            // 
-            // txtIdPedInfoadic
-            // 
-            this.txtIdPedInfoadic.Enabled = false;
-            this.epValidaDados.SetFraseErro(this.txtIdPedInfoadic, "");
-            this.txtIdPedInfoadic.Location = new System.Drawing.Point(566, 19);
-            this.txtIdPedInfoadic.Name = "txtIdPedInfoadic";
-            this.epValidaDados.SetObrigatorio(this.txtIdPedInfoadic, false);
-            this.txtIdPedInfoadic.ReadOnly = true;
-            this.txtIdPedInfoadic.Size = new System.Drawing.Size(71, 23);
-            this.txtIdPedInfoadic.TabIndex = 63;
-            this.txtIdPedInfoadic.TabStop = false;
-            this.txtIdPedInfoadic.Visible = false;
-            // 
-            // lblLaboratorio
-            // 
-            this.lblLaboratorio.AutoSize = true;
-            this.lblLaboratorio.Location = new System.Drawing.Point(455, 114);
-            this.lblLaboratorio.Name = "lblLaboratorio";
-            this.lblLaboratorio.Size = new System.Drawing.Size(84, 16);
-            this.lblLaboratorio.TabIndex = 62;
-            this.lblLaboratorio.Text = "Laboratório";
-            this.lblLaboratorio.Visible = false;
-            // 
-            // txtLaboratorio
-            // 
-            this.txtLaboratorio.Enabled = false;
-            this.epValidaDados.SetFraseErro(this.txtLaboratorio, "Numero do pedido no Cliente obrigatório.");
-            this.txtLaboratorio.Location = new System.Drawing.Point(539, 111);
-            this.txtLaboratorio.Name = "txtLaboratorio";
-            this.epValidaDados.SetObrigatorio(this.txtLaboratorio, false);
-            this.txtLaboratorio.ReadOnly = true;
-            this.txtLaboratorio.Size = new System.Drawing.Size(270, 23);
-            this.txtLaboratorio.TabIndex = 61;
-            this.txtLaboratorio.Visible = false;
-            // 
-            // txtCRM
-            // 
-            this.txtCRM.Enabled = false;
-            this.epValidaDados.SetFraseErro(this.txtCRM, "Numero do pedido no Cliente obrigatório.");
-            this.txtCRM.Location = new System.Drawing.Point(746, 78);
-            this.txtCRM.MaxLength = 8;
-            this.txtCRM.Name = "txtCRM";
-            this.epValidaDados.SetObrigatorio(this.txtCRM, false);
-            this.txtCRM.ReadOnly = true;
-            this.txtCRM.Size = new System.Drawing.Size(82, 23);
-            this.txtCRM.TabIndex = 60;
-            this.txtCRM.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtCRM.Visible = false;
-            // 
-            // lblCRM
-            // 
-            this.lblCRM.AutoSize = true;
-            this.lblCRM.Location = new System.Drawing.Point(708, 82);
-            this.lblCRM.Name = "lblCRM";
-            this.lblCRM.Size = new System.Drawing.Size(36, 16);
-            this.lblCRM.TabIndex = 59;
-            this.lblCRM.Text = "CRM";
-            this.lblCRM.Visible = false;
-            // 
-            // lblNomeMedico
-            // 
-            this.lblNomeMedico.AutoSize = true;
-            this.lblNomeMedico.Location = new System.Drawing.Point(341, 82);
-            this.lblNomeMedico.Name = "lblNomeMedico";
-            this.lblNomeMedico.Size = new System.Drawing.Size(53, 16);
-            this.lblNomeMedico.TabIndex = 58;
-            this.lblNomeMedico.Text = "Médico";
-            this.lblNomeMedico.Visible = false;
-            // 
-            // txtNomeMedico
-            // 
-            this.txtNomeMedico.Enabled = false;
-            this.epValidaDados.SetFraseErro(this.txtNomeMedico, "Numero do pedido no Cliente obrigatório.");
-            this.txtNomeMedico.Location = new System.Drawing.Point(395, 79);
-            this.txtNomeMedico.Name = "txtNomeMedico";
-            this.epValidaDados.SetObrigatorio(this.txtNomeMedico, false);
-            this.txtNomeMedico.ReadOnly = true;
-            this.txtNomeMedico.Size = new System.Drawing.Size(307, 23);
-            this.txtNomeMedico.TabIndex = 9;
-            this.txtNomeMedico.Visible = false;
-            // 
-            // cbCaixa
-            // 
-            this.cbCaixa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCaixa.Enabled = false;
-            this.cbCaixa.FormattingEnabled = true;
-            this.epValidaDados.SetFraseErro(this.cbCaixa, "");
-            this.epValidaDados.SetIndiceCombo(this.cbCaixa, -1);
-            this.cbCaixa.Location = new System.Drawing.Point(911, 110);
-            this.cbCaixa.Name = "cbCaixa";
-            this.epValidaDados.SetObrigatorio(this.cbCaixa, false);
-            this.cbCaixa.Size = new System.Drawing.Size(75, 24);
-            this.cbCaixa.TabIndex = 13;
-            this.cbCaixa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Enter_KeyDown);
-            this.cbCaixa.Validating += new System.ComponentModel.CancelEventHandler(this.cbCaixa_Validating);
-            this.cbCaixa.Validated += new System.EventHandler(this.cbCaixa_Validated);
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(6, 81);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(71, 16);
-            this.label25.TabIndex = 56;
-            this.label25.Text = "Vendedor";
-            // 
-            // cbVendedor
-            // 
-            this.cbVendedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbVendedor.Enabled = false;
-            this.cbVendedor.FormattingEnabled = true;
-            this.epValidaDados.SetFraseErro(this.cbVendedor, "Transportadora obrigatório");
-            this.epValidaDados.SetIndiceCombo(this.cbVendedor, -1);
-            this.cbVendedor.Location = new System.Drawing.Point(82, 79);
-            this.cbVendedor.Name = "cbVendedor";
-            this.epValidaDados.SetObrigatorio(this.cbVendedor, false);
-            this.cbVendedor.Size = new System.Drawing.Size(252, 24);
-            this.cbVendedor.TabIndex = 8;
-            this.cbVendedor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Enter_KeyDown);
-            this.cbVendedor.Validating += new System.ComponentModel.CancelEventHandler(this.cb_Validating);
-            // 
-            // lblNrPedCliente
-            // 
-            this.lblNrPedCliente.AutoSize = true;
-            this.lblNrPedCliente.Location = new System.Drawing.Point(885, 82);
-            this.lblNrPedCliente.Name = "lblNrPedCliente";
-            this.lblNrPedCliente.Size = new System.Drawing.Size(32, 16);
-            this.lblNrPedCliente.TabIndex = 54;
-            this.lblNrPedCliente.Text = "TSO";
-            // 
-            // txtNrPedCliente
-            // 
-            this.txtNrPedCliente.Enabled = false;
-            this.epValidaDados.SetFraseErro(this.txtNrPedCliente, "Numero do pedido no Cliente obrigatório.");
-            this.txtNrPedCliente.Location = new System.Drawing.Point(920, 79);
-            this.txtNrPedCliente.Name = "txtNrPedCliente";
-            this.epValidaDados.SetObrigatorio(this.txtNrPedCliente, false);
-            this.txtNrPedCliente.ReadOnly = true;
-            this.txtNrPedCliente.Size = new System.Drawing.Size(67, 23);
-            this.txtNrPedCliente.TabIndex = 10;
-            // 
-            // txtDtEmissao
-            // 
-            this.txtDtEmissao.Enabled = false;
-            this.epValidaDados.SetFraseErro(this.txtDtEmissao, "Data de Emissão obrigatório");
-            this.txtDtEmissao.Location = new System.Drawing.Point(250, 20);
-            this.txtDtEmissao.Mask = "00/00/0000";
-            this.txtDtEmissao.Name = "txtDtEmissao";
-            this.epValidaDados.SetObrigatorio(this.txtDtEmissao, true);
-            this.txtDtEmissao.ReadOnly = true;
-            this.txtDtEmissao.Size = new System.Drawing.Size(87, 23);
-            this.txtDtEmissao.TabIndex = 4;
-            this.txtDtEmissao.TabStop = false;
-            this.txtDtEmissao.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.epValidaDados.SetTipoValidacao(this.txtDtEmissao, libComponente.TipoValidacao.Vazio);
-            this.txtDtEmissao.ValidatingType = typeof(System.DateTime);
-            this.txtDtEmissao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyNumber_KeyPress);
-            this.txtDtEmissao.Validating += new System.ComponentModel.CancelEventHandler(this.Ctrls_Validating);
-            this.txtDtEmissao.Validated += new System.EventHandler(this.Ctrls_Validated);
-            // 
-            // txtIdCliente
-            // 
-            this.txtIdCliente.Enabled = false;
-            this.epValidaDados.SetFraseErro(this.txtIdCliente, "");
-            this.txtIdCliente.Location = new System.Drawing.Point(456, 19);
-            this.txtIdCliente.Name = "txtIdCliente";
-            this.epValidaDados.SetObrigatorio(this.txtIdCliente, false);
-            this.txtIdCliente.ReadOnly = true;
-            this.txtIdCliente.Size = new System.Drawing.Size(100, 23);
-            this.txtIdCliente.TabIndex = 52;
-            this.txtIdCliente.TabStop = false;
-            this.txtIdCliente.Visible = false;
-            // 
-            // lblNrCaixa
-            // 
-            this.lblNrCaixa.AutoSize = true;
-            this.lblNrCaixa.Location = new System.Drawing.Point(815, 114);
-            this.lblNrCaixa.Name = "lblNrCaixa";
-            this.lblNrCaixa.Size = new System.Drawing.Size(95, 16);
-            this.lblNrCaixa.TabIndex = 51;
-            this.lblNrCaixa.Text = "Número Caixa";
-            // 
-            // lblMotivoEntrega
-            // 
-            this.lblMotivoEntrega.AutoSize = true;
-            this.lblMotivoEntrega.Location = new System.Drawing.Point(338, 84);
-            this.lblMotivoEntrega.Name = "lblMotivoEntrega";
-            this.lblMotivoEntrega.Size = new System.Drawing.Size(107, 16);
-            this.lblMotivoEntrega.TabIndex = 43;
-            this.lblMotivoEntrega.Text = "Motivo Entrega";
-            // 
-            // cbMotivoEntrega
-            // 
-            this.cbMotivoEntrega.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMotivoEntrega.FormattingEnabled = true;
-            this.epValidaDados.SetFraseErro(this.cbMotivoEntrega, "");
-            this.epValidaDados.SetIndiceCombo(this.cbMotivoEntrega, -1);
-            this.cbMotivoEntrega.Location = new System.Drawing.Point(449, 79);
-            this.cbMotivoEntrega.Name = "cbMotivoEntrega";
-            this.epValidaDados.SetObrigatorio(this.cbMotivoEntrega, false);
-            this.cbMotivoEntrega.Size = new System.Drawing.Size(361, 24);
-            this.cbMotivoEntrega.TabIndex = 9;
-            // 
-            // txtHrPrevEntrega
-            // 
-            this.txtHrPrevEntrega.Enabled = false;
-            this.epValidaDados.SetFraseErro(this.txtHrPrevEntrega, "");
-            this.txtHrPrevEntrega.Location = new System.Drawing.Point(942, 47);
-            this.txtHrPrevEntrega.Mask = "00:00";
-            this.txtHrPrevEntrega.Name = "txtHrPrevEntrega";
-            this.epValidaDados.SetObrigatorio(this.txtHrPrevEntrega, false);
-            this.txtHrPrevEntrega.ReadOnly = true;
-            this.txtHrPrevEntrega.Size = new System.Drawing.Size(46, 23);
-            this.txtHrPrevEntrega.TabIndex = 7;
-            this.epValidaDados.SetTipoValidacao(this.txtHrPrevEntrega, libComponente.TipoValidacao.Vazio);
-            this.txtHrPrevEntrega.ValidatingType = typeof(System.DateTime);
-            this.txtHrPrevEntrega.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyNumber_KeyPress);
-            // 
-            // txtDtPrevEntrega
-            // 
-            this.txtDtPrevEntrega.Enabled = false;
-            this.epValidaDados.SetFraseErro(this.txtDtPrevEntrega, "Previsão de entrega obrigatório.");
-            this.txtDtPrevEntrega.Location = new System.Drawing.Point(854, 47);
-            this.txtDtPrevEntrega.Mask = "00/00/0000";
-            this.txtDtPrevEntrega.Name = "txtDtPrevEntrega";
-            this.epValidaDados.SetObrigatorio(this.txtDtPrevEntrega, false);
-            this.txtDtPrevEntrega.ReadOnly = true;
-            this.txtDtPrevEntrega.Size = new System.Drawing.Size(87, 23);
-            this.txtDtPrevEntrega.TabIndex = 6;
-            this.txtDtPrevEntrega.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.epValidaDados.SetTipoValidacao(this.txtDtPrevEntrega, libComponente.TipoValidacao.Vazio);
-            this.txtDtPrevEntrega.ValidatingType = typeof(System.DateTime);
-            this.txtDtPrevEntrega.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyNumber_KeyPress);
-            this.txtDtPrevEntrega.Validating += new System.ComponentModel.CancelEventHandler(this.Ctrls_Validating);
-            this.txtDtPrevEntrega.Validated += new System.EventHandler(this.Ctrls_Validated);
-            // 
-            // lblPrevEntrega
-            // 
-            this.lblPrevEntrega.AutoSize = true;
-            this.lblPrevEntrega.Location = new System.Drawing.Point(753, 52);
-            this.lblPrevEntrega.Name = "lblPrevEntrega";
-            this.lblPrevEntrega.Size = new System.Drawing.Size(97, 16);
-            this.lblPrevEntrega.TabIndex = 39;
-            this.lblPrevEntrega.Text = "Prev. Entrega";
-            // 
-            // btnPesquisa
-            // 
-            this.btnPesquisa.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnPesquisa.Enabled = false;
-            this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesquisa.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnPesquisa.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisa.Image")));
-            this.btnPesquisa.Location = new System.Drawing.Point(163, 47);
-            this.btnPesquisa.Name = "btnPesquisa";
-            this.btnPesquisa.Size = new System.Drawing.Size(27, 27);
-            this.btnPesquisa.TabIndex = 3;
-            this.btnPesquisa.TabStop = false;
-            this.btnPesquisa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPesquisa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnPesquisa.UseVisualStyleBackColor = false;
-            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
-            this.btnPesquisa.Validated += new System.EventHandler(this.btnPesquisa_Validated);
-            // 
-            // lblDtFechamento
-            // 
-            this.lblDtFechamento.AutoSize = true;
-            this.lblDtFechamento.Location = new System.Drawing.Point(549, 52);
-            this.lblDtFechamento.Name = "lblDtFechamento";
-            this.lblDtFechamento.Size = new System.Drawing.Size(109, 16);
-            this.lblDtFechamento.TabIndex = 37;
-            this.lblDtFechamento.Text = "Dt. Fechamento";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(166, 22);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 16);
-            this.label5.TabIndex = 36;
-            this.label5.Text = "Dt. Emissão";
-            // 
-            // lblTransportadora
-            // 
-            this.lblTransportadora.AutoSize = true;
-            this.lblTransportadora.Location = new System.Drawing.Point(453, 114);
-            this.lblTransportadora.Name = "lblTransportadora";
-            this.lblTransportadora.Size = new System.Drawing.Size(110, 16);
-            this.lblTransportadora.TabIndex = 35;
-            this.lblTransportadora.Text = "Transportadora";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 114);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 16);
-            this.label3.TabIndex = 34;
-            this.label3.Text = "Cond. Pagamento";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 52);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 16);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "Cliente";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 16);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "Código";
-            // 
-            // cbTransportadora
-            // 
-            this.cbTransportadora.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cbTransportadora.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cbTransportadora.FormattingEnabled = true;
-            this.epValidaDados.SetFraseErro(this.cbTransportadora, "Transportadora obrigatório");
-            this.epValidaDados.SetIndiceCombo(this.cbTransportadora, -1);
-            this.cbTransportadora.Location = new System.Drawing.Point(565, 110);
-            this.cbTransportadora.Name = "cbTransportadora";
-            this.epValidaDados.SetObrigatorio(this.cbTransportadora, false);
-            this.cbTransportadora.Size = new System.Drawing.Size(245, 24);
-            this.cbTransportadora.TabIndex = 12;
-            this.cbTransportadora.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Enter_KeyDown);
-            this.cbTransportadora.Validating += new System.ComponentModel.CancelEventHandler(this.cb_Validating);
-            // 
-            // cbCondPagamento
-            // 
-            this.cbCondPagamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCondPagamento.Enabled = false;
-            this.cbCondPagamento.FormattingEnabled = true;
-            this.epValidaDados.SetFraseErro(this.cbCondPagamento, "Codição de pagamento obrigatório.");
-            this.epValidaDados.SetIndiceCombo(this.cbCondPagamento, -1);
-            this.cbCondPagamento.Location = new System.Drawing.Point(129, 110);
-            this.cbCondPagamento.Name = "cbCondPagamento";
-            this.epValidaDados.SetObrigatorio(this.cbCondPagamento, true);
-            this.cbCondPagamento.Size = new System.Drawing.Size(318, 24);
-            this.cbCondPagamento.TabIndex = 11;
-            // 
-            // txtCodCliIntegracao
-            // 
-            this.txtCodCliIntegracao.Enabled = false;
-            this.epValidaDados.SetFraseErro(this.txtCodCliIntegracao, "");
-            this.txtCodCliIntegracao.Location = new System.Drawing.Point(63, 49);
-            this.txtCodCliIntegracao.Name = "txtCodCliIntegracao";
-            this.epValidaDados.SetObrigatorio(this.txtCodCliIntegracao, false);
-            this.txtCodCliIntegracao.ReadOnly = true;
-            this.txtCodCliIntegracao.Size = new System.Drawing.Size(100, 23);
-            this.txtCodCliIntegracao.TabIndex = 1;
-            this.txtCodCliIntegracao.TextChanged += new System.EventHandler(this.txtCodCliIntegracao_TextChanged);
-            this.txtCodCliIntegracao.Validating += new System.ComponentModel.CancelEventHandler(this.txtCodCliIntegracao_Validating);
-            this.txtCodCliIntegracao.Validated += new System.EventHandler(this.Ctrls_Validated);
-            // 
-            // txtId
-            // 
-            this.txtId.Enabled = false;
-            this.epValidaDados.SetFraseErro(this.txtId, "");
-            this.txtId.Location = new System.Drawing.Point(347, 19);
-            this.txtId.Name = "txtId";
-            this.epValidaDados.SetObrigatorio(this.txtId, false);
-            this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(100, 23);
-            this.txtId.TabIndex = 26;
-            this.txtId.Visible = false;
-            // 
-            // txtClienteNome
-            // 
-            this.epValidaDados.SetFraseErro(this.txtClienteNome, "Cliente obrigatório.");
-            this.txtClienteNome.Location = new System.Drawing.Point(192, 49);
-            this.txtClienteNome.Name = "txtClienteNome";
-            this.epValidaDados.SetObrigatorio(this.txtClienteNome, true);
-            this.txtClienteNome.ReadOnly = true;
-            this.txtClienteNome.Size = new System.Drawing.Size(342, 23);
-            this.txtClienteNome.TabIndex = 2;
-            this.txtClienteNome.TabStop = false;
-            this.txtClienteNome.Validated += new System.EventHandler(this.Ctrls_Validated);
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Enabled = false;
-            this.epValidaDados.SetFraseErro(this.txtCodigo, "");
-            this.txtCodigo.Location = new System.Drawing.Point(63, 20);
-            this.txtCodigo.Name = "txtCodigo";
-            this.epValidaDados.SetObrigatorio(this.txtCodigo, false);
-            this.txtCodigo.ReadOnly = true;
-            this.txtCodigo.Size = new System.Drawing.Size(100, 23);
-            this.txtCodigo.TabIndex = 0;
-            this.txtCodigo.TabStop = false;
-            this.txtCodigo.Validated += new System.EventHandler(this.Ctrls_Validated);
-            // 
-            // txtDtFechamento
-            // 
-            this.txtDtFechamento.Enabled = false;
-            this.epValidaDados.SetFraseErro(this.txtDtFechamento, "Data de fechamento obrigatório");
-            this.txtDtFechamento.Location = new System.Drawing.Point(660, 48);
-            this.txtDtFechamento.Mask = "00/00/0000";
-            this.txtDtFechamento.Name = "txtDtFechamento";
-            this.epValidaDados.SetObrigatorio(this.txtDtFechamento, false);
-            this.txtDtFechamento.ReadOnly = true;
-            this.txtDtFechamento.Size = new System.Drawing.Size(87, 23);
-            this.txtDtFechamento.TabIndex = 5;
-            this.txtDtFechamento.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.epValidaDados.SetTipoValidacao(this.txtDtFechamento, libComponente.TipoValidacao.Vazio);
-            this.txtDtFechamento.ValidatingType = typeof(System.DateTime);
-            this.txtDtFechamento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyNumber_KeyPress);
-            this.txtDtFechamento.Validating += new System.ComponentModel.CancelEventHandler(this.Ctrls_Validating);
-            this.txtDtFechamento.Validated += new System.EventHandler(this.Ctrls_Validated);
+            this.pnlJanela.Controls.Add(this.gbParcelas);
+            this.pnlJanela.Controls.Add(this.groupBox1);
+            this.pnlJanela.Location = new System.Drawing.Point(18, 56);
+            this.pnlJanela.Size = new System.Drawing.Size(989, 364);
             // 
             // gbParcelas
             // 
@@ -594,8 +129,8 @@
             this.gbParcelas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbParcelas.Location = new System.Drawing.Point(0, 144);
             this.gbParcelas.Name = "gbParcelas";
-            this.gbParcelas.Size = new System.Drawing.Size(1005, 214);
-            this.gbParcelas.TabIndex = 1;
+            this.gbParcelas.Size = new System.Drawing.Size(987, 218);
+            this.gbParcelas.TabIndex = 3;
             this.gbParcelas.TabStop = false;
             this.gbParcelas.Text = "Parcelas";
             // 
@@ -605,7 +140,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 19);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(681, 192);
+            this.panel1.Size = new System.Drawing.Size(663, 196);
             this.panel1.TabIndex = 0;
             // 
             // dgvParcelas
@@ -621,7 +156,7 @@
             this.dgvParcelas.Name = "dgvParcelas";
             this.dgvParcelas.RowHeadersVisible = false;
             this.dgvParcelas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvParcelas.Size = new System.Drawing.Size(681, 192);
+            this.dgvParcelas.Size = new System.Drawing.Size(663, 196);
             this.dgvParcelas.TabIndex = 3;
             this.dgvParcelas.Click += new System.EventHandler(this.dgvParcelas_Click);
             // 
@@ -645,9 +180,9 @@
             this.panel2.Controls.Add(this.txtDtVencimento);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(684, 19);
+            this.panel2.Location = new System.Drawing.Point(666, 19);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(318, 192);
+            this.panel2.Size = new System.Drawing.Size(318, 196);
             this.panel2.TabIndex = 1;
             // 
             // label9
@@ -775,7 +310,6 @@
             this.txtPercentual.Size = new System.Drawing.Size(87, 23);
             this.txtPercentual.TabIndex = 64;
             this.txtPercentual.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtPercentual.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyNumber_KeyPress);
             // 
             // label8
             // 
@@ -797,7 +331,6 @@
             this.txtValor.Size = new System.Drawing.Size(87, 23);
             this.txtValor.TabIndex = 62;
             this.txtValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyNumber_KeyPress);
             this.txtValor.Validated += new System.EventHandler(this.txtValor_Validated);
             // 
             // label7
@@ -859,31 +392,517 @@
             this.label4.TabIndex = 38;
             this.label4.Text = "Dt. Vencimento";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lblPedidoCancelado);
+            this.groupBox1.Controls.Add(this.txtIdPedInfoadic);
+            this.groupBox1.Controls.Add(this.lblLaboratorio);
+            this.groupBox1.Controls.Add(this.txtLaboratorio);
+            this.groupBox1.Controls.Add(this.txtCRM);
+            this.groupBox1.Controls.Add(this.lblCRM);
+            this.groupBox1.Controls.Add(this.lblNomeMedico);
+            this.groupBox1.Controls.Add(this.txtNomeMedico);
+            this.groupBox1.Controls.Add(this.cbCaixa);
+            this.groupBox1.Controls.Add(this.label25);
+            this.groupBox1.Controls.Add(this.cbVendedor);
+            this.groupBox1.Controls.Add(this.lblNrPedCliente);
+            this.groupBox1.Controls.Add(this.txtNrPedCliente);
+            this.groupBox1.Controls.Add(this.txtDtEmissao);
+            this.groupBox1.Controls.Add(this.txtIdCliente);
+            this.groupBox1.Controls.Add(this.lblNrCaixa);
+            this.groupBox1.Controls.Add(this.lblMotivoEntrega);
+            this.groupBox1.Controls.Add(this.cbMotivoEntrega);
+            this.groupBox1.Controls.Add(this.txtHrPrevEntrega);
+            this.groupBox1.Controls.Add(this.txtDtPrevEntrega);
+            this.groupBox1.Controls.Add(this.lblPrevEntrega);
+            this.groupBox1.Controls.Add(this.btnPesquisa);
+            this.groupBox1.Controls.Add(this.lblDtFechamento);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.lblTransportadora);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.cbTransportadora);
+            this.groupBox1.Controls.Add(this.cbCondPagamento);
+            this.groupBox1.Controls.Add(this.txtCodCliIntegracao);
+            this.groupBox1.Controls.Add(this.txtId);
+            this.groupBox1.Controls.Add(this.txtClienteNome);
+            this.groupBox1.Controls.Add(this.txtCodigo);
+            this.groupBox1.Controls.Add(this.txtDtFechamento);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(987, 144);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Dados Pedido";
+            // 
+            // lblPedidoCancelado
+            // 
+            this.lblPedidoCancelado.AutoSize = true;
+            this.lblPedidoCancelado.ForeColor = System.Drawing.Color.Red;
+            this.lblPedidoCancelado.Location = new System.Drawing.Point(657, 23);
+            this.lblPedidoCancelado.Name = "lblPedidoCancelado";
+            this.lblPedidoCancelado.Size = new System.Drawing.Size(135, 16);
+            this.lblPedidoCancelado.TabIndex = 70;
+            this.lblPedidoCancelado.Text = "PEDIDO CANCELADO";
+            this.lblPedidoCancelado.Visible = false;
+            // 
+            // txtIdPedInfoadic
+            // 
+            this.txtIdPedInfoadic.Enabled = false;
+            this.epValidaDados.SetFraseErro(this.txtIdPedInfoadic, "");
+            this.txtIdPedInfoadic.Location = new System.Drawing.Point(566, 19);
+            this.txtIdPedInfoadic.Name = "txtIdPedInfoadic";
+            this.epValidaDados.SetObrigatorio(this.txtIdPedInfoadic, false);
+            this.txtIdPedInfoadic.ReadOnly = true;
+            this.txtIdPedInfoadic.Size = new System.Drawing.Size(71, 23);
+            this.txtIdPedInfoadic.TabIndex = 63;
+            this.txtIdPedInfoadic.TabStop = false;
+            this.txtIdPedInfoadic.Visible = false;
+            // 
+            // lblLaboratorio
+            // 
+            this.lblLaboratorio.AutoSize = true;
+            this.lblLaboratorio.Location = new System.Drawing.Point(455, 114);
+            this.lblLaboratorio.Name = "lblLaboratorio";
+            this.lblLaboratorio.Size = new System.Drawing.Size(84, 16);
+            this.lblLaboratorio.TabIndex = 62;
+            this.lblLaboratorio.Text = "Laboratório";
+            this.lblLaboratorio.Visible = false;
+            // 
+            // txtLaboratorio
+            // 
+            this.txtLaboratorio.Enabled = false;
+            this.epValidaDados.SetFraseErro(this.txtLaboratorio, "Numero do pedido no Cliente obrigatório.");
+            this.txtLaboratorio.Location = new System.Drawing.Point(539, 111);
+            this.txtLaboratorio.Name = "txtLaboratorio";
+            this.epValidaDados.SetObrigatorio(this.txtLaboratorio, false);
+            this.txtLaboratorio.ReadOnly = true;
+            this.txtLaboratorio.Size = new System.Drawing.Size(270, 23);
+            this.txtLaboratorio.TabIndex = 61;
+            this.txtLaboratorio.Visible = false;
+            // 
+            // txtCRM
+            // 
+            this.txtCRM.Enabled = false;
+            this.epValidaDados.SetFraseErro(this.txtCRM, "Numero do pedido no Cliente obrigatório.");
+            this.txtCRM.Location = new System.Drawing.Point(746, 78);
+            this.txtCRM.MaxLength = 8;
+            this.txtCRM.Name = "txtCRM";
+            this.epValidaDados.SetObrigatorio(this.txtCRM, false);
+            this.txtCRM.ReadOnly = true;
+            this.txtCRM.Size = new System.Drawing.Size(82, 23);
+            this.txtCRM.TabIndex = 60;
+            this.txtCRM.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCRM.Visible = false;
+            // 
+            // lblCRM
+            // 
+            this.lblCRM.AutoSize = true;
+            this.lblCRM.Location = new System.Drawing.Point(708, 82);
+            this.lblCRM.Name = "lblCRM";
+            this.lblCRM.Size = new System.Drawing.Size(36, 16);
+            this.lblCRM.TabIndex = 59;
+            this.lblCRM.Text = "CRM";
+            this.lblCRM.Visible = false;
+            // 
+            // lblNomeMedico
+            // 
+            this.lblNomeMedico.AutoSize = true;
+            this.lblNomeMedico.Location = new System.Drawing.Point(341, 82);
+            this.lblNomeMedico.Name = "lblNomeMedico";
+            this.lblNomeMedico.Size = new System.Drawing.Size(53, 16);
+            this.lblNomeMedico.TabIndex = 58;
+            this.lblNomeMedico.Text = "Médico";
+            this.lblNomeMedico.Visible = false;
+            // 
+            // txtNomeMedico
+            // 
+            this.txtNomeMedico.Enabled = false;
+            this.epValidaDados.SetFraseErro(this.txtNomeMedico, "Numero do pedido no Cliente obrigatório.");
+            this.txtNomeMedico.Location = new System.Drawing.Point(395, 79);
+            this.txtNomeMedico.Name = "txtNomeMedico";
+            this.epValidaDados.SetObrigatorio(this.txtNomeMedico, false);
+            this.txtNomeMedico.ReadOnly = true;
+            this.txtNomeMedico.Size = new System.Drawing.Size(307, 23);
+            this.txtNomeMedico.TabIndex = 9;
+            this.txtNomeMedico.Visible = false;
+            // 
+            // cbCaixa
+            // 
+            this.cbCaixa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCaixa.Enabled = false;
+            this.cbCaixa.FormattingEnabled = true;
+            this.epValidaDados.SetFraseErro(this.cbCaixa, "");
+            this.epValidaDados.SetIndiceCombo(this.cbCaixa, -1);
+            this.cbCaixa.Location = new System.Drawing.Point(911, 110);
+            this.cbCaixa.Name = "cbCaixa";
+            this.epValidaDados.SetObrigatorio(this.cbCaixa, false);
+            this.cbCaixa.Size = new System.Drawing.Size(75, 24);
+            this.cbCaixa.TabIndex = 13;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(6, 81);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(71, 16);
+            this.label25.TabIndex = 56;
+            this.label25.Text = "Vendedor";
+            // 
+            // cbVendedor
+            // 
+            this.cbVendedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbVendedor.Enabled = false;
+            this.cbVendedor.FormattingEnabled = true;
+            this.epValidaDados.SetFraseErro(this.cbVendedor, "Transportadora obrigatório");
+            this.epValidaDados.SetIndiceCombo(this.cbVendedor, -1);
+            this.cbVendedor.Location = new System.Drawing.Point(82, 79);
+            this.cbVendedor.Name = "cbVendedor";
+            this.epValidaDados.SetObrigatorio(this.cbVendedor, false);
+            this.cbVendedor.Size = new System.Drawing.Size(252, 24);
+            this.cbVendedor.TabIndex = 8;
+            // 
+            // lblNrPedCliente
+            // 
+            this.lblNrPedCliente.AutoSize = true;
+            this.lblNrPedCliente.Location = new System.Drawing.Point(885, 82);
+            this.lblNrPedCliente.Name = "lblNrPedCliente";
+            this.lblNrPedCliente.Size = new System.Drawing.Size(32, 16);
+            this.lblNrPedCliente.TabIndex = 54;
+            this.lblNrPedCliente.Text = "TSO";
+            // 
+            // txtNrPedCliente
+            // 
+            this.txtNrPedCliente.Enabled = false;
+            this.epValidaDados.SetFraseErro(this.txtNrPedCliente, "Numero do pedido no Cliente obrigatório.");
+            this.txtNrPedCliente.Location = new System.Drawing.Point(920, 79);
+            this.txtNrPedCliente.Name = "txtNrPedCliente";
+            this.epValidaDados.SetObrigatorio(this.txtNrPedCliente, false);
+            this.txtNrPedCliente.ReadOnly = true;
+            this.txtNrPedCliente.Size = new System.Drawing.Size(67, 23);
+            this.txtNrPedCliente.TabIndex = 10;
+            // 
+            // txtDtEmissao
+            // 
+            this.txtDtEmissao.Enabled = false;
+            this.epValidaDados.SetFraseErro(this.txtDtEmissao, "Data de Emissão obrigatório");
+            this.txtDtEmissao.Location = new System.Drawing.Point(250, 20);
+            this.txtDtEmissao.Mask = "00/00/0000";
+            this.txtDtEmissao.Name = "txtDtEmissao";
+            this.epValidaDados.SetObrigatorio(this.txtDtEmissao, true);
+            this.txtDtEmissao.ReadOnly = true;
+            this.txtDtEmissao.Size = new System.Drawing.Size(87, 23);
+            this.txtDtEmissao.TabIndex = 4;
+            this.txtDtEmissao.TabStop = false;
+            this.txtDtEmissao.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.epValidaDados.SetTipoValidacao(this.txtDtEmissao, libComponente.TipoValidacao.Vazio);
+            this.txtDtEmissao.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtIdCliente
+            // 
+            this.txtIdCliente.Enabled = false;
+            this.epValidaDados.SetFraseErro(this.txtIdCliente, "");
+            this.txtIdCliente.Location = new System.Drawing.Point(456, 19);
+            this.txtIdCliente.Name = "txtIdCliente";
+            this.epValidaDados.SetObrigatorio(this.txtIdCliente, false);
+            this.txtIdCliente.ReadOnly = true;
+            this.txtIdCliente.Size = new System.Drawing.Size(100, 23);
+            this.txtIdCliente.TabIndex = 52;
+            this.txtIdCliente.TabStop = false;
+            this.txtIdCliente.Visible = false;
+            // 
+            // lblNrCaixa
+            // 
+            this.lblNrCaixa.AutoSize = true;
+            this.lblNrCaixa.Location = new System.Drawing.Point(815, 114);
+            this.lblNrCaixa.Name = "lblNrCaixa";
+            this.lblNrCaixa.Size = new System.Drawing.Size(95, 16);
+            this.lblNrCaixa.TabIndex = 51;
+            this.lblNrCaixa.Text = "Número Caixa";
+            // 
+            // lblMotivoEntrega
+            // 
+            this.lblMotivoEntrega.AutoSize = true;
+            this.lblMotivoEntrega.Location = new System.Drawing.Point(338, 84);
+            this.lblMotivoEntrega.Name = "lblMotivoEntrega";
+            this.lblMotivoEntrega.Size = new System.Drawing.Size(107, 16);
+            this.lblMotivoEntrega.TabIndex = 43;
+            this.lblMotivoEntrega.Text = "Motivo Entrega";
+            // 
+            // cbMotivoEntrega
+            // 
+            this.cbMotivoEntrega.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMotivoEntrega.FormattingEnabled = true;
+            this.epValidaDados.SetFraseErro(this.cbMotivoEntrega, "");
+            this.epValidaDados.SetIndiceCombo(this.cbMotivoEntrega, -1);
+            this.cbMotivoEntrega.Location = new System.Drawing.Point(449, 79);
+            this.cbMotivoEntrega.Name = "cbMotivoEntrega";
+            this.epValidaDados.SetObrigatorio(this.cbMotivoEntrega, false);
+            this.cbMotivoEntrega.Size = new System.Drawing.Size(361, 24);
+            this.cbMotivoEntrega.TabIndex = 9;
+            // 
+            // txtHrPrevEntrega
+            // 
+            this.txtHrPrevEntrega.Enabled = false;
+            this.epValidaDados.SetFraseErro(this.txtHrPrevEntrega, "");
+            this.txtHrPrevEntrega.Location = new System.Drawing.Point(942, 47);
+            this.txtHrPrevEntrega.Mask = "00:00";
+            this.txtHrPrevEntrega.Name = "txtHrPrevEntrega";
+            this.epValidaDados.SetObrigatorio(this.txtHrPrevEntrega, false);
+            this.txtHrPrevEntrega.ReadOnly = true;
+            this.txtHrPrevEntrega.Size = new System.Drawing.Size(46, 23);
+            this.txtHrPrevEntrega.TabIndex = 7;
+            this.epValidaDados.SetTipoValidacao(this.txtHrPrevEntrega, libComponente.TipoValidacao.Vazio);
+            this.txtHrPrevEntrega.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtDtPrevEntrega
+            // 
+            this.txtDtPrevEntrega.Enabled = false;
+            this.epValidaDados.SetFraseErro(this.txtDtPrevEntrega, "Previsão de entrega obrigatório.");
+            this.txtDtPrevEntrega.Location = new System.Drawing.Point(854, 47);
+            this.txtDtPrevEntrega.Mask = "00/00/0000";
+            this.txtDtPrevEntrega.Name = "txtDtPrevEntrega";
+            this.epValidaDados.SetObrigatorio(this.txtDtPrevEntrega, false);
+            this.txtDtPrevEntrega.ReadOnly = true;
+            this.txtDtPrevEntrega.Size = new System.Drawing.Size(87, 23);
+            this.txtDtPrevEntrega.TabIndex = 6;
+            this.txtDtPrevEntrega.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.epValidaDados.SetTipoValidacao(this.txtDtPrevEntrega, libComponente.TipoValidacao.Vazio);
+            this.txtDtPrevEntrega.ValidatingType = typeof(System.DateTime);
+            // 
+            // lblPrevEntrega
+            // 
+            this.lblPrevEntrega.AutoSize = true;
+            this.lblPrevEntrega.Location = new System.Drawing.Point(753, 52);
+            this.lblPrevEntrega.Name = "lblPrevEntrega";
+            this.lblPrevEntrega.Size = new System.Drawing.Size(97, 16);
+            this.lblPrevEntrega.TabIndex = 39;
+            this.lblPrevEntrega.Text = "Prev. Entrega";
+            // 
+            // btnPesquisa
+            // 
+            this.btnPesquisa.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnPesquisa.Enabled = false;
+            this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisa.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnPesquisa.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisa.Image")));
+            this.btnPesquisa.Location = new System.Drawing.Point(163, 47);
+            this.btnPesquisa.Name = "btnPesquisa";
+            this.btnPesquisa.Size = new System.Drawing.Size(27, 27);
+            this.btnPesquisa.TabIndex = 3;
+            this.btnPesquisa.TabStop = false;
+            this.btnPesquisa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPesquisa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnPesquisa.UseVisualStyleBackColor = false;
+            // 
+            // lblDtFechamento
+            // 
+            this.lblDtFechamento.AutoSize = true;
+            this.lblDtFechamento.Location = new System.Drawing.Point(549, 52);
+            this.lblDtFechamento.Name = "lblDtFechamento";
+            this.lblDtFechamento.Size = new System.Drawing.Size(109, 16);
+            this.lblDtFechamento.TabIndex = 37;
+            this.lblDtFechamento.Text = "Dt. Fechamento";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(166, 22);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(82, 16);
+            this.label5.TabIndex = 36;
+            this.label5.Text = "Dt. Emissão";
+            // 
+            // lblTransportadora
+            // 
+            this.lblTransportadora.AutoSize = true;
+            this.lblTransportadora.Location = new System.Drawing.Point(453, 114);
+            this.lblTransportadora.Name = "lblTransportadora";
+            this.lblTransportadora.Size = new System.Drawing.Size(110, 16);
+            this.lblTransportadora.TabIndex = 35;
+            this.lblTransportadora.Text = "Transportadora";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 114);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(121, 16);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "Cond. Pagamento";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 52);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 16);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "Cliente";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 16);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Código";
+            // 
+            // cbTransportadora
+            // 
+            this.cbTransportadora.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbTransportadora.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cbTransportadora.FormattingEnabled = true;
+            this.epValidaDados.SetFraseErro(this.cbTransportadora, "Transportadora obrigatório");
+            this.epValidaDados.SetIndiceCombo(this.cbTransportadora, -1);
+            this.cbTransportadora.Location = new System.Drawing.Point(565, 110);
+            this.cbTransportadora.Name = "cbTransportadora";
+            this.epValidaDados.SetObrigatorio(this.cbTransportadora, false);
+            this.cbTransportadora.Size = new System.Drawing.Size(245, 24);
+            this.cbTransportadora.TabIndex = 12;
+            // 
+            // cbCondPagamento
+            // 
+            this.cbCondPagamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCondPagamento.Enabled = false;
+            this.cbCondPagamento.FormattingEnabled = true;
+            this.epValidaDados.SetFraseErro(this.cbCondPagamento, "Codição de pagamento obrigatório.");
+            this.epValidaDados.SetIndiceCombo(this.cbCondPagamento, -1);
+            this.cbCondPagamento.Location = new System.Drawing.Point(129, 110);
+            this.cbCondPagamento.Name = "cbCondPagamento";
+            this.epValidaDados.SetObrigatorio(this.cbCondPagamento, true);
+            this.cbCondPagamento.Size = new System.Drawing.Size(318, 24);
+            this.cbCondPagamento.TabIndex = 11;
+            // 
+            // txtCodCliIntegracao
+            // 
+            this.txtCodCliIntegracao.Enabled = false;
+            this.epValidaDados.SetFraseErro(this.txtCodCliIntegracao, "");
+            this.txtCodCliIntegracao.Location = new System.Drawing.Point(63, 49);
+            this.txtCodCliIntegracao.Name = "txtCodCliIntegracao";
+            this.epValidaDados.SetObrigatorio(this.txtCodCliIntegracao, false);
+            this.txtCodCliIntegracao.ReadOnly = true;
+            this.txtCodCliIntegracao.Size = new System.Drawing.Size(100, 23);
+            this.txtCodCliIntegracao.TabIndex = 1;
+            // 
+            // txtId
+            // 
+            this.txtId.Enabled = false;
+            this.epValidaDados.SetFraseErro(this.txtId, "");
+            this.txtId.Location = new System.Drawing.Point(347, 19);
+            this.txtId.Name = "txtId";
+            this.epValidaDados.SetObrigatorio(this.txtId, false);
+            this.txtId.ReadOnly = true;
+            this.txtId.Size = new System.Drawing.Size(100, 23);
+            this.txtId.TabIndex = 26;
+            this.txtId.Visible = false;
+            // 
+            // txtClienteNome
+            // 
+            this.epValidaDados.SetFraseErro(this.txtClienteNome, "Cliente obrigatório.");
+            this.txtClienteNome.Location = new System.Drawing.Point(192, 49);
+            this.txtClienteNome.Name = "txtClienteNome";
+            this.epValidaDados.SetObrigatorio(this.txtClienteNome, true);
+            this.txtClienteNome.ReadOnly = true;
+            this.txtClienteNome.Size = new System.Drawing.Size(342, 23);
+            this.txtClienteNome.TabIndex = 2;
+            this.txtClienteNome.TabStop = false;
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Enabled = false;
+            this.epValidaDados.SetFraseErro(this.txtCodigo, "");
+            this.txtCodigo.Location = new System.Drawing.Point(63, 20);
+            this.txtCodigo.Name = "txtCodigo";
+            this.epValidaDados.SetObrigatorio(this.txtCodigo, false);
+            this.txtCodigo.ReadOnly = true;
+            this.txtCodigo.Size = new System.Drawing.Size(100, 23);
+            this.txtCodigo.TabIndex = 0;
+            this.txtCodigo.TabStop = false;
+            // 
+            // txtDtFechamento
+            // 
+            this.txtDtFechamento.Enabled = false;
+            this.epValidaDados.SetFraseErro(this.txtDtFechamento, "Data de fechamento obrigatório");
+            this.txtDtFechamento.Location = new System.Drawing.Point(660, 48);
+            this.txtDtFechamento.Mask = "00/00/0000";
+            this.txtDtFechamento.Name = "txtDtFechamento";
+            this.epValidaDados.SetObrigatorio(this.txtDtFechamento, false);
+            this.txtDtFechamento.ReadOnly = true;
+            this.txtDtFechamento.Size = new System.Drawing.Size(87, 23);
+            this.txtDtFechamento.TabIndex = 5;
+            this.txtDtFechamento.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.epValidaDados.SetTipoValidacao(this.txtDtFechamento, libComponente.TipoValidacao.Vazio);
+            this.txtDtFechamento.ValidatingType = typeof(System.DateTime);
+            // 
             // frmProcParcelaPedidoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScroll = true;
             this.CancelButton = null;
-            this.ClientSize = new System.Drawing.Size(1122, 360);
+            this.ClientSize = new System.Drawing.Size(1122, 438);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmProcParcelaPedidoView";
             this.Text = "Parcelas do Pedido de Vendas";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Enter_KeyDown);
             this.pnlBotoes.ResumeLayout(false);
-            this.pnlPrincipal.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.epValidaDados)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.pnlPrincipal.ResumeLayout(false);
+            this.pnlJanela.ResumeLayout(false);
             this.gbParcelas.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvParcelas)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.GroupBox gbParcelas;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dgvParcelas;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cbFormaPagamento;
+        private System.Windows.Forms.TextBox txtNrDias;
+        private System.Windows.Forms.TextBox txtIdPedido;
+        private System.Windows.Forms.TextBox txtIdParcela;
+        private System.Windows.Forms.Label lblParcela;
+        private System.Windows.Forms.CheckBox chkPago;
+        private System.Windows.Forms.Button btnDown;
+        private System.Windows.Forms.Button btnUp;
+        private System.Windows.Forms.TextBox txtPercentual;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtValor;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.MaskedTextBox txtDtPagamento;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.MaskedTextBox txtDtVencimento;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lblPedidoCancelado;
+        private System.Windows.Forms.TextBox txtIdPedInfoadic;
+        private System.Windows.Forms.Label lblLaboratorio;
+        private System.Windows.Forms.TextBox txtLaboratorio;
+        private System.Windows.Forms.TextBox txtCRM;
+        private System.Windows.Forms.Label lblCRM;
+        private System.Windows.Forms.Label lblNomeMedico;
+        private System.Windows.Forms.TextBox txtNomeMedico;
+        private System.Windows.Forms.ComboBox cbCaixa;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.ComboBox cbVendedor;
+        private System.Windows.Forms.Label lblNrPedCliente;
+        private System.Windows.Forms.TextBox txtNrPedCliente;
+        private System.Windows.Forms.MaskedTextBox txtDtEmissao;
+        private System.Windows.Forms.TextBox txtIdCliente;
+        private System.Windows.Forms.Label lblNrCaixa;
         private System.Windows.Forms.Label lblMotivoEntrega;
         private System.Windows.Forms.ComboBox cbMotivoEntrega;
         private System.Windows.Forms.MaskedTextBox txtHrPrevEntrega;
@@ -902,43 +921,6 @@
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox txtClienteNome;
         private System.Windows.Forms.TextBox txtCodigo;
-        private System.Windows.Forms.Label lblNrCaixa;
-        private System.Windows.Forms.TextBox txtIdCliente;
         private System.Windows.Forms.MaskedTextBox txtDtFechamento;
-        private System.Windows.Forms.MaskedTextBox txtDtEmissao;
-        private System.Windows.Forms.Label lblNrPedCliente;
-        private System.Windows.Forms.TextBox txtNrPedCliente;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.ComboBox cbVendedor;
-        private System.Windows.Forms.ComboBox cbCaixa;
-        private System.Windows.Forms.TextBox txtNomeMedico;
-        private System.Windows.Forms.Label lblNomeMedico;
-        private System.Windows.Forms.TextBox txtCRM;
-        private System.Windows.Forms.Label lblCRM;
-        private System.Windows.Forms.Label lblLaboratorio;
-        private System.Windows.Forms.TextBox txtLaboratorio;
-        private System.Windows.Forms.TextBox txtIdPedInfoadic;
-        private System.Windows.Forms.GroupBox gbParcelas;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dgvParcelas;
-        private System.Windows.Forms.MaskedTextBox txtDtPagamento;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.MaskedTextBox txtDtVencimento;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnDown;
-        private System.Windows.Forms.Button btnUp;
-        private System.Windows.Forms.TextBox txtPercentual;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtValor;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lblParcela;
-        private System.Windows.Forms.CheckBox chkPago;
-        private System.Windows.Forms.TextBox txtIdParcela;
-        private System.Windows.Forms.TextBox txtNrDias;
-        private System.Windows.Forms.TextBox txtIdPedido;
-        private System.Windows.Forms.Label lblPedidoCancelado;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cbFormaPagamento;
     }
 }

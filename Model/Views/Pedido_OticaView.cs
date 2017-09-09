@@ -16,6 +16,8 @@ namespace Model
 
         public string os { get; set; }
 
+        public DateTime? DtEmissao { get; set; }
+
         public string cliente { get; set; }
 
         public string codicao_pagamento { get; set; }
@@ -23,9 +25,7 @@ namespace Model
         public string vendedor { get; set; }
 
         public string laboratorio { get; set; }
-
-        public DateTime? DtEmissao { get; set; }
-
+        
         public decimal? Total { get; set; }
 
         public string Status { get; set; }

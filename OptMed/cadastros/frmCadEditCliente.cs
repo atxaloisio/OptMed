@@ -26,6 +26,7 @@ namespace optmed
 
         protected override void LoadToControls()
         {
+            this.Cursor = Cursors.WaitCursor;
             if (Id != null)
             {
                 ClienteBLL = new ClienteBLL();
@@ -85,6 +86,7 @@ namespace optmed
                     imgFotoCliente.Refresh();
                 }
             }
+            this.Cursor = Cursors.Default;
         }
 
         protected override bool salvar(object sender, EventArgs e)
@@ -138,6 +140,7 @@ namespace optmed
                     {
                         if (Cliente.codigo_cliente_omie <= 0)
                         {
+                            Cliente.Id_empresa = Program.usuario_logado.Id_empresa;
                             proxy.IncluirClientes(Cliente);
                         }
                         else
@@ -150,6 +153,12 @@ namespace optmed
                     {
                         Id = Cliente.Id;
                         txtId.Text = Cliente.Id.ToString();
+                        txtCodInt.Text = Cliente.codigo_cliente_integracao;
+                        if (Cliente.codigo_cliente_omie > 0)
+                        {
+                            txtCodigo.Text = Cliente.codigo_cliente_omie.ToString();
+                        }
+                        
                     }
 
                     SalvarImagem(Cliente.Id);
@@ -197,6 +206,7 @@ namespace optmed
 
             if (Id == null)
             {
+                ClienteBLL = new ClienteBLL();
                 cliList = ClienteBLL.getCliente(p => p.razao_social == txtRazaoSocial.Text & p.cliente_tag.Any(c => c.tag == "Cliente"), true);
                 if (cliList.Count() > 0)
                 {
@@ -604,11 +614,17 @@ namespace optmed
         private void CapturaCamera()
         {
             frmUtilCamera camera = new frmUtilCamera();
-            if (camera.ExibeDialogo() == DialogResult.OK)
+            try
             {
-                imgFotoCliente.Image = (Bitmap)camera.imgCaptura.Clone();
+                if (camera.ExibeDialogo() == DialogResult.OK)
+                {
+                    imgFotoCliente.Image = (Bitmap)camera.imgCaptura.Clone();
+                }
             }
-            camera.Dispose(); 
+            finally
+            {
+                camera.Dispose();
+            }                        
         }
 
         private void btnAbrirImagem_Click(object sender, EventArgs e)
@@ -646,6 +662,38 @@ namespace optmed
                 txtObservacoes.AppendText("\r\n");
                 txtObservacoes.ScrollToCaret();
                 e.SuppressKeyPress = true;
+            }
+        }
+
+        private void frmCadEditCliente_Activated(object sender, EventArgs e)
+        {            
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void frmCadEditCliente_Resize(object sender, EventArgs e)
+        {
+            if (!isDialogo)
+            {
+                pnlJanela.Dock = DockStyle.None;
+                pnlJanela.Left = (this.Width / 2) - (pnlJanela.Width / 2);
+                pnlJanela.Top = (this.Height / 2) - (pnlJanela.Height / 2);
+
+                if (pnlJanela.Top <= 0)
+                {
+                    pnlJanela.Top = 5;
+                }
+
+                if (pnlJanela.Left <= 0)
+                {
+                    pnlJanela.Left = 5;
+                    pnlJanela.Top = 5;
+                    pnlJanela.Dock = DockStyle.Left;
+                    pnlPrincipal.Width = pnlJanela.Width;
+                }
+                else
+                {                    
+                    pnlJanela.Left = pnlJanela.Left - (pnlBotoes.Width / 2);
+                }               
             }
         }
     }

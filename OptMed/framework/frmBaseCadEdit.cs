@@ -9,10 +9,9 @@ using Utils;
 using Model;
 
 namespace optmed
-{
+{    
     public partial class frmBaseCadEdit : optmed.frmBase
-    {
-
+    {       
         public frmBaseCadEdit()
         {
             InitializeComponent();
@@ -27,21 +26,22 @@ namespace optmed
 
         protected virtual void btnSalvar_Click(object sender, EventArgs e)
         {
-            Salvar_Click(sender, e);                        
+            this.Cursor = Cursors.WaitCursor;
+            Salvar_Click(sender, e);
+            this.Cursor = Cursors.Default;               
         }
 
         protected virtual void Salvar_Click(object sender, EventArgs e)
         {
             try
-            {
-                atualizagrid = true;
+            {                
                 if (ValidaAcessoFuncao(Operacao.Salvar))
                 {
                     if (salvar(sender, e))
                     {
+                        this.atualizagrid();
                         btnIncluir.Top = 40;
-                        btnIncluir.Visible = true;
-                        btnFechar.Top = 75;
+                        btnIncluir.Visible = true;                        
                         MessageBox.Show(Text + " salvo com sucesso.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ImprimirRegistro(Id);
                     }
@@ -134,8 +134,9 @@ namespace optmed
 
         protected virtual void btnIncluir_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             Incluir();
-            
+            this.Cursor = Cursors.Default;
         }
 
         protected virtual void Incluir()
@@ -161,9 +162,63 @@ namespace optmed
 
         private void frmBaseCadEdit_Load(object sender, EventArgs e)
         {
+			this.Cursor = Cursors.WaitCursor;
             SetupControls();
-            LoadToControls();            
+            LoadToControls();
+
+            if (!isDialogo)
+            {
+                pnlJanela.Left = (this.Width / 2) - (pnlJanela.Width / 2);
+                pnlJanela.Top = (this.Height / 2) - (pnlJanela.Height / 2);
+
+                if (pnlJanela.Top <= 0)
+                {
+                    pnlJanela.Top = 5;
+                }
+
+                if (pnlJanela.Left <= 0)
+                {
+                    pnlJanela.Left = 5;                    
+                    pnlJanela.Top = 5;
+                }
+                else
+                {
+                    pnlJanela.Left = pnlJanela.Left - (pnlBotoes.Width / 2);
+                }
+            }
+                        
+            btnFechar.Top = (pnlBotoes.Height - btnFechar.Height);
+			this.Cursor = Cursors.Default;
         }
-              
+
+        private void frmBaseCadEdit_Resize(object sender, EventArgs e)
+        {
+            if (!isDialogo)
+            {
+                 
+                pnlJanela.Left = (this.Width / 2) - (pnlJanela.Width / 2);
+                pnlJanela.Top = (this.Height / 2) - (pnlJanela.Height / 2);                
+
+                if (pnlJanela.Top <= 0)
+                {
+                    pnlJanela.Top = 5;
+                }
+
+                if (pnlJanela.Left <= 0)
+                {                    
+                    pnlJanela.Left = 5;
+                    pnlJanela.Top = 5;
+                }
+                else
+                {
+                    pnlJanela.Left = pnlJanela.Left - (pnlBotoes.Width / 2);
+                }              
+            }                        
+        }
+
+        private void frmBaseCadEdit_SizeChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

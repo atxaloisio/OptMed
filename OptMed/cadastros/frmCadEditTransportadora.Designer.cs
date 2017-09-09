@@ -99,8 +99,9 @@
             this.btnCapturaCamera = new System.Windows.Forms.Button();
             this.dlgCaminhoImagem = new System.Windows.Forms.OpenFileDialog();
             this.pnlBotoes.SuspendLayout();
-            this.pnlPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epValidaDados)).BeginInit();
+            this.pnlPrincipal.SuspendLayout();
+            this.pnlJanela.SuspendLayout();
             this.tcCliente.SuspendLayout();
             this.tpEndereco.SuspendLayout();
             this.tpTelefoneEmail.SuspendLayout();
@@ -110,36 +111,45 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgFotoCliente)).BeginInit();
             this.SuspendLayout();
             // 
+            // btnFechar
+            // 
+            this.btnFechar.Location = new System.Drawing.Point(3, 295);
+            // 
             // pnlBotoes
             // 
             this.pnlBotoes.Size = new System.Drawing.Size(115, 328);
             // 
             // pnlPrincipal
             // 
-            this.pnlPrincipal.Controls.Add(this.btnCapturaCamera);
-            this.pnlPrincipal.Controls.Add(this.btnAbrirImagem);
-            this.pnlPrincipal.Controls.Add(this.imgFotoCliente);
-            this.pnlPrincipal.Controls.Add(this.label27);
-            this.pnlPrincipal.Controls.Add(this.label26);
-            this.pnlPrincipal.Controls.Add(this.tcCliente);
-            this.pnlPrincipal.Controls.Add(this.label7);
-            this.pnlPrincipal.Controls.Add(this.txtContato);
-            this.pnlPrincipal.Controls.Add(this.label6);
-            this.pnlPrincipal.Controls.Add(this.label5);
-            this.pnlPrincipal.Controls.Add(this.label4);
-            this.pnlPrincipal.Controls.Add(this.txtDDD);
-            this.pnlPrincipal.Controls.Add(this.txtTelefone);
-            this.pnlPrincipal.Controls.Add(this.txtCNPJCPF);
-            this.pnlPrincipal.Controls.Add(this.label2);
-            this.pnlPrincipal.Controls.Add(this.txtNomeFantasia);
-            this.pnlPrincipal.Controls.Add(this.txtCodigo);
-            this.pnlPrincipal.Controls.Add(this.txtId);
-            this.pnlPrincipal.Controls.Add(this.chkBloqueado);
-            this.pnlPrincipal.Controls.Add(this.label1);
-            this.pnlPrincipal.Controls.Add(this.txtRazaoSocial);
-            this.pnlPrincipal.Controls.Add(this.txtCodInt);
-            this.pnlPrincipal.Controls.Add(this.label3);
             this.pnlPrincipal.Size = new System.Drawing.Size(796, 328);
+            // 
+            // pnlJanela
+            // 
+            this.pnlJanela.Controls.Add(this.btnCapturaCamera);
+            this.pnlJanela.Controls.Add(this.btnAbrirImagem);
+            this.pnlJanela.Controls.Add(this.imgFotoCliente);
+            this.pnlJanela.Controls.Add(this.label27);
+            this.pnlJanela.Controls.Add(this.label26);
+            this.pnlJanela.Controls.Add(this.tcCliente);
+            this.pnlJanela.Controls.Add(this.label7);
+            this.pnlJanela.Controls.Add(this.txtContato);
+            this.pnlJanela.Controls.Add(this.label6);
+            this.pnlJanela.Controls.Add(this.label5);
+            this.pnlJanela.Controls.Add(this.label4);
+            this.pnlJanela.Controls.Add(this.txtDDD);
+            this.pnlJanela.Controls.Add(this.txtTelefone);
+            this.pnlJanela.Controls.Add(this.txtCNPJCPF);
+            this.pnlJanela.Controls.Add(this.label2);
+            this.pnlJanela.Controls.Add(this.txtNomeFantasia);
+            this.pnlJanela.Controls.Add(this.txtCodigo);
+            this.pnlJanela.Controls.Add(this.txtId);
+            this.pnlJanela.Controls.Add(this.chkBloqueado);
+            this.pnlJanela.Controls.Add(this.label1);
+            this.pnlJanela.Controls.Add(this.txtRazaoSocial);
+            this.pnlJanela.Controls.Add(this.txtCodInt);
+            this.pnlJanela.Controls.Add(this.label3);
+            this.pnlJanela.Location = new System.Drawing.Point(8, 19);
+            this.pnlJanela.Size = new System.Drawing.Size(796, 328);
             // 
             // label3
             // 
@@ -500,7 +510,7 @@
             this.tpTelefoneEmail.Location = new System.Drawing.Point(4, 25);
             this.tpTelefoneEmail.Name = "tpTelefoneEmail";
             this.tpTelefoneEmail.Padding = new System.Windows.Forms.Padding(3);
-            this.tpTelefoneEmail.Size = new System.Drawing.Size(485, 180);
+            this.tpTelefoneEmail.Size = new System.Drawing.Size(786, 180);
             this.tpTelefoneEmail.TabIndex = 1;
             this.tpTelefoneEmail.Text = "Telefones e E-mail";
             this.tpTelefoneEmail.UseVisualStyleBackColor = true;
@@ -898,12 +908,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(911, 328);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "frmCadEditTransportadora";
             this.Text = "Transportadora";
+            this.Activated += new System.EventHandler(this.frmCadEditTransportadora_Activated);
+            this.Resize += new System.EventHandler(this.frmCadEditTransportadora_Resize);
             this.pnlBotoes.ResumeLayout(false);
-            this.pnlPrincipal.ResumeLayout(false);
-            this.pnlPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epValidaDados)).EndInit();
+            this.pnlPrincipal.ResumeLayout(false);
+            this.pnlJanela.ResumeLayout(false);
+            this.pnlJanela.PerformLayout();
             this.tcCliente.ResumeLayout(false);
             this.tpEndereco.ResumeLayout(false);
             this.tpEndereco.PerformLayout();

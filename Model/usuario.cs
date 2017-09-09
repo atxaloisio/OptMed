@@ -24,6 +24,8 @@ namespace Model
         public Nullable<System.DateTime> alteracao { get; set; }
         public string usuario_alteracao { get; set; }
         public string inativo { get; set; }
+        public Nullable<long> Id_empresa { get; set; }
+        public Nullable<long> Id_filial { get; set; }
     
         public virtual Perfil perfil { get; set; }
     }

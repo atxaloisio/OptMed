@@ -342,6 +342,7 @@
             // frmBaseList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(731, 405);
             this.Controls.Add(this.pnlDados);

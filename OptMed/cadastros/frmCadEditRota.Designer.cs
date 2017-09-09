@@ -37,9 +37,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cbTransportadora = new System.Windows.Forms.ComboBox();
             this.pnlBotoes.SuspendLayout();
-            this.pnlPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epValidaDados)).BeginInit();
+            this.pnlPrincipal.SuspendLayout();
+            this.pnlJanela.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.Location = new System.Drawing.Point(3, 353);
             // 
             // pnlBotoes
             // 
@@ -47,15 +52,20 @@
             // 
             // pnlPrincipal
             // 
-            this.pnlPrincipal.Controls.Add(this.label4);
-            this.pnlPrincipal.Controls.Add(this.cbTransportadora);
-            this.pnlPrincipal.Controls.Add(this.label1);
-            this.pnlPrincipal.Controls.Add(this.cbCidade);
-            this.pnlPrincipal.Controls.Add(this.txtIdCliente);
-            this.pnlPrincipal.Controls.Add(this.txtId);
-            this.pnlPrincipal.Controls.Add(this.label3);
-            this.pnlPrincipal.Controls.Add(this.cbUF);
             this.pnlPrincipal.Size = new System.Drawing.Size(495, 112);
+            // 
+            // pnlJanela
+            // 
+            this.pnlJanela.Controls.Add(this.label4);
+            this.pnlJanela.Controls.Add(this.cbTransportadora);
+            this.pnlJanela.Controls.Add(this.label1);
+            this.pnlJanela.Controls.Add(this.cbCidade);
+            this.pnlJanela.Controls.Add(this.txtIdCliente);
+            this.pnlJanela.Controls.Add(this.txtId);
+            this.pnlJanela.Controls.Add(this.label3);
+            this.pnlJanela.Controls.Add(this.cbUF);
+            this.pnlJanela.Location = new System.Drawing.Point(66, 19);
+            this.pnlJanela.Size = new System.Drawing.Size(495, 112);
             // 
             // label3
             // 
@@ -159,12 +169,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(610, 112);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "frmCadEditRota";
             this.Text = "Transportadora x Localidade";
+            this.Activated += new System.EventHandler(this.frmCadEditRota_Activated);
             this.pnlBotoes.ResumeLayout(false);
-            this.pnlPrincipal.ResumeLayout(false);
-            this.pnlPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epValidaDados)).EndInit();
+            this.pnlPrincipal.ResumeLayout(false);
+            this.pnlJanela.ResumeLayout(false);
+            this.pnlJanela.PerformLayout();
             this.ResumeLayout(false);
 
         }

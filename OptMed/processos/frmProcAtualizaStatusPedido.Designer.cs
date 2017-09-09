@@ -72,7 +72,6 @@
             // 
             this.pnlDados.Controls.Add(this.panel2);
             this.pnlDados.Controls.Add(this.pnlFiltro);
-            this.pnlDados.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDados.Location = new System.Drawing.Point(0, 0);
             this.pnlDados.Name = "pnlDados";
             this.pnlDados.Size = new System.Drawing.Size(1078, 572);
@@ -314,6 +313,7 @@
             this.pnlEntregue.AllowDrop = true;
             this.pnlEntregue.AutoScroll = true;
             this.pnlEntregue.BackColor = System.Drawing.Color.Transparent;
+            this.pnlEntregue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlEntregue.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlEntregue.Location = new System.Drawing.Point(896, 44);
             this.pnlEntregue.Name = "pnlEntregue";
@@ -328,6 +328,7 @@
             this.pnlSaiuPEntrega.AllowDrop = true;
             this.pnlSaiuPEntrega.AutoScroll = true;
             this.pnlSaiuPEntrega.BackColor = System.Drawing.Color.Transparent;
+            this.pnlSaiuPEntrega.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlSaiuPEntrega.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlSaiuPEntrega.Location = new System.Drawing.Point(717, 44);
             this.pnlSaiuPEntrega.Name = "pnlSaiuPEntrega";
@@ -342,6 +343,7 @@
             this.pnlAEntregar.AllowDrop = true;
             this.pnlAEntregar.AutoScroll = true;
             this.pnlAEntregar.BackColor = System.Drawing.Color.Transparent;
+            this.pnlAEntregar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlAEntregar.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlAEntregar.Location = new System.Drawing.Point(538, 44);
             this.pnlAEntregar.Name = "pnlAEntregar";
@@ -356,6 +358,7 @@
             this.pnlEmProducao.AllowDrop = true;
             this.pnlEmProducao.AutoScroll = true;
             this.pnlEmProducao.BackColor = System.Drawing.Color.Transparent;
+            this.pnlEmProducao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlEmProducao.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlEmProducao.Location = new System.Drawing.Point(359, 44);
             this.pnlEmProducao.Name = "pnlEmProducao";
@@ -370,6 +373,7 @@
             this.pnlAGProducao.AllowDrop = true;
             this.pnlAGProducao.AutoScroll = true;
             this.pnlAGProducao.BackColor = System.Drawing.Color.Transparent;
+            this.pnlAGProducao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlAGProducao.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlAGProducao.Location = new System.Drawing.Point(180, 44);
             this.pnlAGProducao.Name = "pnlAGProducao";
@@ -387,6 +391,7 @@
             this.pnlGravadaImpressa.AutoScroll = true;
             this.pnlGravadaImpressa.AutoScrollMinSize = new System.Drawing.Size(5, 0);
             this.pnlGravadaImpressa.BackColor = System.Drawing.Color.Transparent;
+            this.pnlGravadaImpressa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlGravadaImpressa.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlGravadaImpressa.ForeColor = System.Drawing.SystemColors.ControlText;
             this.pnlGravadaImpressa.Location = new System.Drawing.Point(1, 44);
@@ -419,10 +424,11 @@
             // frmProcAtualizaStatusPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1078, 572);
             this.Controls.Add(this.pnlDados);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.KeyPreview = true;
             this.Name = "frmProcAtualizaStatusPedido";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
@@ -430,6 +436,7 @@
             this.Text = "Status do Pedido";
             this.Activated += new System.EventHandler(this.frmProcAtualizaStatusPedido_Activated);
             this.Load += new System.EventHandler(this.frmProcAtualizaStatusPedido_Load);
+            this.Resize += new System.EventHandler(this.frmProcAtualizaStatusPedido_Resize);
             this.pnlDados.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
@@ -451,33 +458,34 @@
         }
 
         #endregion
-        public System.Windows.Forms.Panel pnlDados;
-        private System.Windows.Forms.Panel panel2;
+
         private System.Windows.Forms.Panel pnlFiltro;
         protected System.Windows.Forms.DataGridView dgvFiltro;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label lblCountEntregue;
+        private System.Windows.Forms.LinkLabel lblEntregue;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label lblCountSaiuPEntrega;
+        private System.Windows.Forms.LinkLabel lblSaiuPEntrega;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lblCountAEntregar;
+        private System.Windows.Forms.LinkLabel lblAEntregar;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label lblCountEmProducao;
+        private System.Windows.Forms.LinkLabel lblEmProducao;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblCountAgProducao;
+        private System.Windows.Forms.LinkLabel lblAgProducao;
+        private System.Windows.Forms.Panel pnlGravadasImpressas;
+        private System.Windows.Forms.Label lblCountGravadas;
+        private System.Windows.Forms.LinkLabel lblGravadasImpressas;
         private System.Windows.Forms.Panel pnlEntregue;
         private System.Windows.Forms.Panel pnlSaiuPEntrega;
         private System.Windows.Forms.Panel pnlAEntregar;
         private System.Windows.Forms.Panel pnlEmProducao;
         private System.Windows.Forms.Panel pnlAGProducao;
         private System.Windows.Forms.Panel pnlGravadaImpressa;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.LinkLabel lblEntregue;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.LinkLabel lblSaiuPEntrega;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.LinkLabel lblAEntregar;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.LinkLabel lblEmProducao;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.LinkLabel lblAgProducao;
-        private System.Windows.Forms.Panel pnlGravadasImpressas;
-        private System.Windows.Forms.LinkLabel lblGravadasImpressas;
-        private System.Windows.Forms.Label lblCountEntregue;
-        private System.Windows.Forms.Label lblCountSaiuPEntrega;
-        private System.Windows.Forms.Label lblCountAEntregar;
-        private System.Windows.Forms.Label lblCountEmProducao;
-        private System.Windows.Forms.Label lblCountAgProducao;
-        private System.Windows.Forms.Label lblCountGravadas;
+        public System.Windows.Forms.Panel pnlDados;
     }
 }

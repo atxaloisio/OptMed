@@ -71,15 +71,18 @@
       <DependentUpon>dbInteg.tt</DependentUpon>
     </Compile>
     <Compile Include="dbInteg.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>dbInteg.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Empresa.cs">
       <DependentUpon>dbInteg.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityBase.cs" />
     <Compile Include="Familia_Produto.cs">
+      <DependentUpon>dbInteg.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Filial.cs">
       <DependentUpon>dbInteg.tt</DependentUpon>
     </Compile>
     <Compile Include="FiltroPesquisa.cs" />
@@ -167,6 +170,7 @@
     <Compile Include="Rota.cs">
       <DependentUpon>dbInteg.tt</DependentUpon>
     </Compile>
+    <Compile Include="stUsuario.cs" />
     <Compile Include="Tag.cs">
       <DependentUpon>dbInteg.tt</DependentUpon>
     </Compile>
@@ -193,6 +197,7 @@
     <Compile Include="Views\Cliente_ParcelaView.cs" />
     <Compile Include="Views\Cliente_TransportadoraView.cs" />
     <Compile Include="Views\Cliente_VendedorView.cs" />
+    <Compile Include="Views\FilialView.cs" />
     <Compile Include="Views\ParcelaView.cs" />
     <Compile Include="Views\Pedido_OticaAgrupaView.cs" />
     <Compile Include="Views\Pedido_OticaParcelaView.cs" />

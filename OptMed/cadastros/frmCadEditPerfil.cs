@@ -111,5 +111,10 @@ namespace optmed
             }
             
         }
+
+        private void frmCadEditPerfil_Activated(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
     }
 }

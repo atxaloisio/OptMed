@@ -141,6 +141,11 @@ namespace optmed
             base.Limpar(control);
 
             txtNome.Focus();
-        }                
+        }
+
+        private void frmCadEditVendedor_Activated(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
     }
 }

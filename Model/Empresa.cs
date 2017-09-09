@@ -14,6 +14,12 @@ namespace Model
     
     public partial class Empresa
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Empresa()
+        {
+            this.filials = new HashSet<Filial>();
+        }
+    
         public long Id { get; set; }
         public Nullable<long> codigo_empresa { get; set; }
         public string codigo_empresa_integracao { get; set; }
@@ -47,5 +53,8 @@ namespace Model
         public string inativa { get; set; }
         public string gera_nfse { get; set; }
         public string optante_simples_nacional { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Filial> filials { get; set; }
     }
 }

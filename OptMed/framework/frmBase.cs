@@ -11,36 +11,43 @@ using Model;
 
 namespace optmed
 {
+    public delegate void AtualizaGrid();
     public partial class frmBase : Form, IDisposable
     {
-        public virtual bool atualizagrid { get; set; }
+        public AtualizaGrid atualizagrid;        
         public virtual long? Id { get; set; }
+        public virtual bool isDialogo { get; set; }
         public frmBase()
         {
             InitializeComponent();
-            atualizagrid = false;
+            atualizagrid = null;
             Id = null;
+            isDialogo = false;
         }
 
         public virtual DialogResult ExibeDialogo(IWin32Window obj, long? pId)
         {
             Id = pId;
+            isDialogo = true;
             return ShowDialog(obj);
         }
         public virtual DialogResult ExibeDialogo(IWin32Window obj)
         {
+           isDialogo = true;
            return ShowDialog(obj);
         }
 
         public virtual DialogResult ExibeDialogo(long? pId)
         {
             Id = pId;
+            isDialogo = true;
            return ShowDialog();
         }
 
         public virtual DialogResult ExibeDialogo()
-        {            
-           return ShowDialog();
+        {
+            isDialogo = true;
+            return ShowDialog();
         }
 
         protected virtual bool ValidaAcessoFuncao(Operacao operacao, object tag = null )
